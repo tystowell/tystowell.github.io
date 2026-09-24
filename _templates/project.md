@@ -5,12 +5,11 @@
 
 title: Project Title
 summary: One sentence shown on cards and under the title.
-category: simulation        # simulation | experiment | ml | games (see _data/categories.yml)
-date: 2026-01-01            # used for sorting (newest first within a category)
+category: simulation        # simulation | experiment | embedded | ml | software | games (see _data/categories.yml)
+date: 2026-01-01            # start date; every list on the site is sorted by this, newest first
 period: 2025 – present      # shown instead of the date if set
 status: Ongoing             # free text: Ongoing, Completed, Published, Playable…
 featured: false             # true → appears in "Highlights" on the home page
-order:                      # optional: lower numbers sort first (in Highlights and within a category)
 
 role: What you did
 advisor: Prof. Name
@@ -25,6 +24,8 @@ hero_alt: Describe the image
 hero_caption: Optional caption
 
 embed: https://tystowell.github.io/some-game/        # optional iframe (games, demos)
+embed_size: [1140, 660]     # optional: native size of a fixed-size page; it gets scaled to fit
+embed_note: Click the game first so it picks up your keyboard.
 
 links:
   - label: Code

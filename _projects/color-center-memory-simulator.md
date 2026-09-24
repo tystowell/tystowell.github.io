@@ -6,7 +6,6 @@ date: 2025-01-01
 period: 2024 – present
 status: Ongoing
 featured: true
-order: 1
 role: Lead developer
 advisor: "TODO: Prof. Name"
 tools: [Python, QuTiP, NumPy, SciPy]

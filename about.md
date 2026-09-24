@@ -19,8 +19,14 @@ solid-state spin–photon interfaces, quantum frequency conversion, and simulati
 
 ## Experience
 
+<!-- Newest first. -->
+
 **Undergraduate Researcher**, TODO Lab — 2024–present
 : TODO: one line on what you did and what came of it.
+
+**Engineering Intern**, Harsch Systems — Summer 2021
+: Designed an [RP2040-based industrial I/O board]({{ '/work/rp2040-board/' | relative_url }}) in KiCad and
+  brought up [embedded Rust firmware]({{ '/work/embedded-rust-rp2040/' | relative_url }}) on the Raspberry Pi Pico.
 
 ## Publications & presentations
 
@@ -42,4 +48,5 @@ solid-state spin–photon interfaces, quantum frequency conversion, and simulati
 
 - **Simulation:** TODO (Python, NumPy/SciPy, QuTiP, Julia, …)
 - **Experimental:** TODO (free-space & fiber optics, nonlinear optics, single-photon detection, …)
-- **Software:** TODO (Git, PyTorch, JavaScript, …)
+- **Embedded & hardware:** Rust, RP2040 / Cortex-M, KiCad PCB design
+- **Software:** Python, Java, JavaScript, C, TensorFlow, Git

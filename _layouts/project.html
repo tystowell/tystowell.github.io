@@ -4,14 +4,15 @@ body_class: project-page
 ---
 {%- assign cat = site.data.categories | where: "id", page.category | first -%}
 {%- include ordered-projects.html -%}
-{%- for p in ordered_projects -%}
+{%- comment -%} Newer/Older links walk through all projects chronologically. {%- endcomment -%}
+{%- for p in chrono_projects -%}
   {%- if p.url == page.url -%}
-    {%- assign prev_i = forloop.index0 | minus: 1 -%}
-    {%- assign next_i = forloop.index0 | plus: 1 -%}
+    {%- assign newer_i = forloop.index0 | minus: 1 -%}
+    {%- assign older_i = forloop.index0 | plus: 1 -%}
   {%- endif -%}
 {%- endfor -%}
-{%- if prev_i >= 0 -%}{%- assign prev_p = ordered_projects[prev_i] -%}{%- endif -%}
-{%- assign next_p = ordered_projects[next_i] -%}
+{%- if newer_i >= 0 -%}{%- assign newer_p = chrono_projects[newer_i] -%}{%- endif -%}
+{%- assign older_p = chrono_projects[older_i] -%}
 
 <div class="container project-layout" style="--hue: {{ cat.hue | default: '#5b5bd6' }}">
   <aside class="project-sidebar">
@@ -60,9 +61,18 @@ body_class: project-page
     {% endif %}
 
     {% if page.embed %}
+    {%- if page.embed_size -%}
+      {%- assign embed_w = page.embed_size[0] -%}{%- assign embed_h = page.embed_size[1] -%}
+    {%- endif -%}
     <figure class="embed">
+      {% if embed_w %}
+      <div class="embed-scaler" data-embed-width="{{ embed_w }}" style="aspect-ratio: {{ embed_w }} / {{ embed_h }}">
+        <iframe src="{{ page.embed }}" title="{{ page.title }}" loading="lazy" allowfullscreen style="width: {{ embed_w }}px; height: {{ embed_h }}px"></iframe>
+      </div>
+      {% else %}
       <iframe src="{{ page.embed }}" title="{{ page.title }}" loading="lazy" allowfullscreen></iframe>
-      <figcaption><a href="{{ page.embed }}">Open full screen {% include icon.html name="external" %}</a></figcaption>
+      {% endif %}
+      <figcaption>{% if page.embed_note %}{{ page.embed_note }} · {% endif %}<a href="{{ page.embed }}">Open full screen {% include icon.html name="external" %}</a></figcaption>
     </figure>
     {% endif %}
 
@@ -70,17 +80,17 @@ body_class: project-page
       {{ content }}
     </div>
 
-    <nav class="pager" aria-label="Previous and next project">
-      {% if prev_p %}
-      <a class="pager-prev" href="{{ prev_p.url | relative_url }}">
-        <span class="mono">{% include icon.html name="arrow-left" %} Previous</span>
-        <strong>{{ prev_p.title }}</strong>
+    <nav class="pager" aria-label="Newer and older projects">
+      {% if newer_p %}
+      <a class="pager-prev" href="{{ newer_p.url | relative_url }}">
+        <span class="mono">{% include icon.html name="arrow-left" %} Newer</span>
+        <strong>{{ newer_p.title }}</strong>
       </a>
       {% else %}<span></span>{% endif %}
-      {% if next_p %}
-      <a class="pager-next" href="{{ next_p.url | relative_url }}">
-        <span class="mono">Next {% include icon.html name="arrow-right" %}</span>
-        <strong>{{ next_p.title }}</strong>
+      {% if older_p %}
+      <a class="pager-next" href="{{ older_p.url | relative_url }}">
+        <span class="mono">Older {% include icon.html name="arrow-right" %}</span>
+        <strong>{{ older_p.title }}</strong>
       </a>
       {% endif %}
     </nav>

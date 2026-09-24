@@ -2,6 +2,7 @@
 # `id` is what you put in a project's `category:` front matter.
 # `group` clusters categories into top-level sections, in the order listed here.
 # `hue` is the accent color used for chips, thumbnails and highlights.
+# Within a category, projects are always sorted by date, newest first.
 
 - id: simulation
   label: Theory & Simulation
@@ -15,11 +16,23 @@
   hue: "#d4462e"
   blurb: Hands-on optics, photonics and lab systems.
 
+- id: embedded
+  label: Embedded & Hardware
+  group: Work Experience
+  hue: "#2f7fc1"
+  blurb: Firmware and circuit boards built on the job.
+
 - id: ml
   label: Machine Learning
   group: Personal Projects
   hue: "#0f8b7d"
   blurb: Learning systems, data and models.
+
+- id: software
+  label: Software & Algorithms
+  group: Personal Projects
+  hue: "#8a5cc7"
+  blurb: Signal processing, cryptography and robotics code.
 
 - id: games
   label: Games & Web

@@ -337,6 +337,9 @@ p { margin: 0 0 1em; }
 .embed { margin: 0 0 40px; }
 .embed iframe { width: 100%; aspect-ratio: 4 / 3; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-alt); display: block; }
 .embed figcaption a { display: inline-flex; align-items: center; gap: .4em; }
+/* Fixed-size embeds (embed_size) render at native size and are scaled down to fit by main.js */
+.embed-scaler { position: relative; width: 100%; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: #000; }
+.embed-scaler iframe { position: absolute; top: 0; left: 0; border: 0; border-radius: 0; aspect-ratio: auto; transform-origin: 0 0; }
 
 .pager { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--line); max-width: 70ch; }
 .pager a { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border: 1px solid var(--line); border-radius: var(--radius-sm); text-decoration: none; background: var(--surface); transition: border-color .15s, transform .15s; }

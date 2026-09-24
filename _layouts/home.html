@@ -22,7 +22,7 @@ body_class: home
   </div>
 </section>
 
-{% assign featured = site.projects | where: "featured", true | sort: "order", "last" %}
+{% assign featured = site.projects | where: "featured", true | sort: "date" | reverse %}
 {% if featured.size > 0 %}
 <section class="section">
   <div class="container">

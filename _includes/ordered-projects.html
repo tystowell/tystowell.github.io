@@ -1,12 +1,12 @@
 {%- comment -%}
-  Builds `ordered_projects`: every project, grouped by category (in the order of
-  _data/categories.yml), then by `order` (if set), then newest first.
-  This single ordering drives the work index, the sidebar and prev/next links.
+  Builds two lists:
+  - `chrono_projects`: every project, newest first (the /work/ grid and Newer/Older links).
+  - `ordered_projects`: grouped by category (in the order of _data/categories.yml),
+    newest first within each category (the work index and "Jump to…" sidebar).
 {%- endcomment -%}
+{%- assign chrono_projects = site.projects | sort: "date" | reverse -%}
 {%- assign ordered_projects = "" | split: "" -%}
 {%- for cat in site.data.categories -%}
-  {%- assign in_cat = site.projects | where: "category", cat.id | sort: "date" | reverse -%}
-  {%- assign with_order = in_cat | where_exp: "p", "p.order" | sort: "order" -%}
-  {%- assign without_order = in_cat | where_exp: "p", "p.order == nil" -%}
-  {%- assign ordered_projects = ordered_projects | concat: with_order | concat: without_order -%}
+  {%- assign in_cat = chrono_projects | where: "category", cat.id -%}
+  {%- assign ordered_projects = ordered_projects | concat: in_cat -%}
 {%- endfor -%}

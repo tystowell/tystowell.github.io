@@ -6,7 +6,6 @@ date: 2024-06-01
 period: 2023 – 2025
 status: Completed
 featured: true
-order: 2
 role: "TODO: e.g. Undergraduate researcher — design, alignment, characterization"
 advisor: "TODO: Prof. Name"
 tools: [Nonlinear optics, PPLN waveguides, SNSPDs, Python DAQ]

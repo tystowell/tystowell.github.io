@@ -21,6 +21,16 @@
       });
     }
 
+    /* Scale fixed-size embeds (e.g. a game with a fixed canvas) to the column width. */
+    var scalers = document.querySelectorAll('.embed-scaler');
+    function fitEmbeds() {
+      scalers.forEach(function (box) {
+        var frame = box.querySelector('iframe');
+        frame.style.transform = 'scale(' + box.clientWidth / Number(box.dataset.embedWidth) + ')';
+      });
+    }
+    if (scalers.length) { fitEmbeds(); window.addEventListener('resize', fitEmbeds); }
+
     /* Filters on /work/ — also honours #category in the URL. */
     var chips = document.querySelectorAll('.filters .chip');
     var cards = document.querySelectorAll('[data-filter-target] .card');

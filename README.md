@@ -2,7 +2,7 @@
 
 Personal portfolio site for PhD applications, built with [Jekyll](https://jekyllrb.com/) and hosted on GitHub Pages.
 
-**Live site:** https://tystowell.github.io/TechnicalPortfolio/
+**Live site:** https://tystowell.github.io/
 
 ## Publishing (one-time setup)
 
@@ -11,13 +11,14 @@ Personal portfolio site for PhD applications, built with [Jekyll](https://jekyll
 3. Under **Build and deployment**, set **Source** to *Deploy from a branch*, then pick branch `main` and folder `/ (root)`.
 4. Wait a minute. The site builds itself on every push after that.
 
-> Want the shorter URL `https://tystowell.github.io/`? Rename the repo to `tystowell.github.io`
-> and set `baseurl: ""` in `_config.yml`.
+> The repo is named `tystowell.github.io`, so the site is served at the root URL and
+> `baseurl` in `_config.yml` is `""`. If the repo is ever renamed, set `baseurl: /<repo-name>`.
 
 ## Adding a project
 
 1. Copy `_templates/project.md` to `_projects/<short-name>.md`. The file name becomes the URL (`/work/<short-name>/`).
 2. Fill in the front matter (`title`, `summary`, `category` and `date` are required) and write the page in Markdown.
+   `date` is the start date. Every list on the site is sorted by it, newest first.
 3. Put images in `assets/img/projects/` and reference them as `/assets/img/projects/foo.png` in `thumbnail:` / `hero:`.
    Inside Markdown, write `![caption]({{ '/assets/img/projects/foo.png' | relative_url }})`.
 4. Commit and push.
@@ -25,7 +26,7 @@ Personal portfolio site for PhD applications, built with [Jekyll](https://jekyll
 The project then shows up automatically in:
 - the **Index of work** on the home page (grouped by category),
 - the filterable grid on **/work/**,
-- the **Jump to…** sidebar and **Previous / Next** links on every project page,
+- the **Jump to…** sidebar and **Newer / Older** links on every project page,
 - **Highlights** on the home page, if you set `featured: true`.
 
 Useful front matter:
@@ -33,9 +34,9 @@ Useful front matter:
 | Field | What it does |
 |---|---|
 | `featured: true` | Show as a large card in Highlights on the home page |
-| `order: 1` | Manual sort position (lower first) within Highlights and within its category |
 | `math: true` | Enables LaTeX via MathJax: `$inline$` and `$$display$$` |
 | `embed: <url>` | Embeds an iframe at the top of the page. Good for games hosted on GitHub Pages |
+| `embed_size: [w, h]` | For fixed-size pages (like a game canvas): renders at that size and scales it to fit |
 | `links:` | Buttons under the title (`icon:` can be `github`, `file`, `play`, `external`) |
 | `tools:` | Tag pills on cards and the page |
 

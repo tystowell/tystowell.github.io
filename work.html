@@ -9,7 +9,7 @@ description: Research and personal projects — simulation, experiment, machine 
   <header class="page-header">
     <p class="eyebrow mono">Portfolio</p>
     <h1>Work</h1>
-    <p class="lede">Research in quantum information science, and the things I build for fun. Filter by type, or pick anything to read more.</p>
+    <p class="lede">Research in quantum information science, and the things I build for fun. Newest first. Filter by type, or pick anything to read more.</p>
   </header>
 
   <div class="filters" role="group" aria-label="Filter projects">
@@ -23,6 +23,6 @@ description: Research and personal projects — simulation, experiment, machine 
   </div>
 
   <div class="card-grid" data-filter-target>
-    {% for p in ordered_projects %}{% include project-card.html project=p %}{% endfor %}
+    {% for p in chrono_projects %}{% include project-card.html project=p %}{% endfor %}
   </div>
 </section>
