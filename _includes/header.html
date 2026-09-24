@@ -1,0 +1,19 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-mark" aria-hidden="true">|ψ⟩</span>
+      <span class="brand-name">{{ site.author.name }}</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      {% for item in site.data.navigation %}
+        {% assign active = false %}
+        {% if page.url contains item.url %}{% assign active = true %}{% endif %}
+        <a href="{{ item.url | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {% endfor %}
+      {% if site.author.cv != "" %}<a href="{{ site.author.cv | relative_url }}">CV</a>{% endif %}
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        {% include icon.html name="sun" %}{% include icon.html name="moon" %}
+      </button>
+    </nav>
+  </div>
+</header>

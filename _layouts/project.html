@@ -1,0 +1,88 @@
+---
+layout: default
+body_class: project-page
+---
+{%- assign cat = site.data.categories | where: "id", page.category | first -%}
+{%- include ordered-projects.html -%}
+{%- for p in ordered_projects -%}
+  {%- if p.url == page.url -%}
+    {%- assign prev_i = forloop.index0 | minus: 1 -%}
+    {%- assign next_i = forloop.index0 | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if prev_i >= 0 -%}{%- assign prev_p = ordered_projects[prev_i] -%}{%- endif -%}
+{%- assign next_p = ordered_projects[next_i] -%}
+
+<div class="container project-layout" style="--hue: {{ cat.hue | default: '#5b5bd6' }}">
+  <aside class="project-sidebar">
+    <details class="jump" open>
+      <summary class="mono">Jump to…</summary>
+      {% include work-index.html compact=true %}
+    </details>
+  </aside>
+
+  <article class="project">
+    <header class="project-header">
+      <p class="breadcrumb mono">
+        <a href="{{ '/work/' | relative_url }}">Work</a> <span>/</span>
+        <a href="{{ '/work/' | relative_url }}#{{ cat.id }}">{{ cat.label }}</a>
+      </p>
+      <h1>{{ page.title }}</h1>
+      {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+
+      <dl class="facts">
+        {% if page.period or page.date %}<div><dt>When</dt><dd>{% if page.period %}{{ page.period }}{% else %}{{ page.date | date: "%B %Y" }}{% endif %}</dd></div>{% endif %}
+        {% if page.status %}<div><dt>Status</dt><dd>{{ page.status }}</dd></div>{% endif %}
+        {% if page.role %}<div><dt>Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
+        {% if page.advisor %}<div><dt>Advisor</dt><dd>{{ page.advisor }}</dd></div>{% endif %}
+        {% if page.collaborators %}<div><dt>With</dt><dd>{{ page.collaborators }}</dd></div>{% endif %}
+      </dl>
+
+      {% if page.tools %}
+      <ul class="tags">{% for t in page.tools %}<li>{{ t }}</li>{% endfor %}</ul>
+      {% endif %}
+
+      {% if page.links %}
+      <div class="project-links">
+        {% for l in page.links %}
+        {%- assign link_icon = l.icon | default: "external" -%}
+        <a class="btn" href="{{ l.url | relative_url }}">{% include icon.html name=link_icon %} {{ l.label }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </header>
+
+    {% if page.hero %}
+    <figure class="project-hero">
+      <img src="{{ page.hero | relative_url }}" alt="{{ page.hero_alt | default: page.title }}">
+      {% if page.hero_caption %}<figcaption>{{ page.hero_caption }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+
+    {% if page.embed %}
+    <figure class="embed">
+      <iframe src="{{ page.embed }}" title="{{ page.title }}" loading="lazy" allowfullscreen></iframe>
+      <figcaption><a href="{{ page.embed }}">Open full screen {% include icon.html name="external" %}</a></figcaption>
+    </figure>
+    {% endif %}
+
+    <div class="prose">
+      {{ content }}
+    </div>
+
+    <nav class="pager" aria-label="Previous and next project">
+      {% if prev_p %}
+      <a class="pager-prev" href="{{ prev_p.url | relative_url }}">
+        <span class="mono">{% include icon.html name="arrow-left" %} Previous</span>
+        <strong>{{ prev_p.title }}</strong>
+      </a>
+      {% else %}<span></span>{% endif %}
+      {% if next_p %}
+      <a class="pager-next" href="{{ next_p.url | relative_url }}">
+        <span class="mono">Next {% include icon.html name="arrow-right" %}</span>
+        <strong>{{ next_p.title }}</strong>
+      </a>
+      {% endif %}
+    </nav>
+  </article>
+</div>

@@ -1,0 +1,23 @@
+{%- assign p = include.project -%}
+{%- assign cat = site.data.categories | where: "id", p.category | first -%}
+<article class="card{% if include.large %} card-large{% endif %}" data-category="{{ p.category }}" style="--hue: {{ cat.hue | default: '#5b5bd6' }}">
+  <a class="card-link" href="{{ p.url | relative_url }}">
+    <div class="card-media">
+      {% if p.thumbnail %}
+        <img src="{{ p.thumbnail | relative_url }}" alt="" loading="lazy">
+      {% else %}
+        <div class="card-placeholder" aria-hidden="true"><span>{{ p.title | slice: 0 }}</span></div>
+      {% endif %}
+    </div>
+    <div class="card-body">
+      <p class="eyebrow"><span class="dot"></span>{{ cat.label }}<span class="sep">·</span>{% if p.period %}{{ p.period }}{% else %}{{ p.date | date: "%Y" }}{% endif %}</p>
+      <h3 class="card-title">{{ p.title }}</h3>
+      <p class="card-summary">{{ p.summary }}</p>
+      {% if p.tools %}
+      <ul class="tags">
+        {% for t in p.tools limit: 4 %}<li>{{ t }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </a>
+</article>

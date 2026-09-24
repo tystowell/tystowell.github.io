@@ -1,0 +1,7 @@
+<ul class="social">
+  {% if site.author.email != "" %}<li><a href="mailto:{{ site.author.email }}">{% include icon.html name="mail" %}<span>Email</span></a></li>{% endif %}
+  {% if site.author.github != "" %}<li><a href="https://github.com/{{ site.author.github }}">{% include icon.html name="github" %}<span>GitHub</span></a></li>{% endif %}
+  {% if site.author.scholar != "" %}<li><a href="{{ site.author.scholar }}">{% include icon.html name="scholar" %}<span>Scholar</span></a></li>{% endif %}
+  {% if site.author.orcid != "" %}<li><a href="{{ site.author.orcid }}">{% include icon.html name="orcid" %}<span>ORCID</span></a></li>{% endif %}
+  {% if site.author.linkedin != "" %}<li><a href="{{ site.author.linkedin }}">{% include icon.html name="linkedin" %}<span>LinkedIn</span></a></li>{% endif %}
+</ul>

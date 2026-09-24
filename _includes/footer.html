@@ -1,0 +1,12 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-name">{{ site.author.name }}</p>
+      <p class="muted">{{ site.author.affiliation }}</p>
+    </div>
+    {% include social-links.html %}
+  </div>
+  <div class="container footer-meta mono">
+    © {{ site.time | date: "%Y" }} · Built with Jekyll &amp; GitHub Pages
+  </div>
+</footer>

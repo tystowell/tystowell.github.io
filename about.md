@@ -1,0 +1,45 @@
+---
+title: About
+permalink: /about/
+eyebrow: About me
+lede: "TODO: one or two sentences on who you are and what you want to work on in grad school."
+---
+
+<!-- Everything below is ordinary Markdown. Replace the TODOs with your own content. -->
+
+## Research interests
+
+TODO: A short paragraph on the questions that excite you — e.g. quantum networks and repeaters,
+solid-state spin–photon interfaces, quantum frequency conversion, and simulation of open quantum systems.
+
+## Education
+
+**Brigham Young University** — B.S. in TODO, expected 2027
+: TODO: advisor, lab, honors, relevant coursework.
+
+## Experience
+
+**Undergraduate Researcher**, TODO Lab — 2024–present
+: TODO: one line on what you did and what came of it.
+
+## Publications & presentations
+
+{% if site.data.publications.size > 0 %}
+<ul class="pubs">
+{% for pub in site.data.publications %}
+  <li>
+    <span class="pub-type mono">{{ pub.type }}</span>
+    <div>
+      {% if pub.url != "" %}<a href="{{ pub.url }}"><strong>{{ pub.title }}</strong></a>{% else %}<strong>{{ pub.title }}</strong>{% endif %}<br>
+      <span class="muted">{{ pub.authors }} · <em>{{ pub.venue }}</em>, {{ pub.year }}</span>
+    </div>
+  </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+## Skills
+
+- **Simulation:** TODO (Python, NumPy/SciPy, QuTiP, Julia, …)
+- **Experimental:** TODO (free-space & fiber optics, nonlinear optics, single-photon detection, …)
+- **Software:** TODO (Git, PyTorch, JavaScript, …)

@@ -1,0 +1,8 @@
+# Papers, posters and talks shown on the About page. Delete the examples and add your own.
+# type: paper | preprint | poster | talk
+- title: "TODO: Title of a paper, poster, or talk"
+  authors: "T. Stowell, A. Collaborator, B. Advisor"
+  venue: "Conference or Journal Name"
+  year: 2026
+  type: poster
+  url: ""

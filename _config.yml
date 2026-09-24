@@ -1,0 +1,62 @@
+# ─────────────────────────────────────────────────────────────
+#  Site settings — edit these first
+# ─────────────────────────────────────────────────────────────
+title: Tyler Stowell
+tagline: Quantum information science · quantum networks · simulation & experiment
+description: >-
+  Portfolio of research and projects in quantum information science —
+  color-center quantum memories, quantum frequency conversion, and more.
+
+author:
+  name: Tyler Stowell
+  affiliation: Brigham Young University
+  email: trs66@byu.edu
+  github: tystowell
+  scholar: ""        # Google Scholar profile URL (leave empty to hide)
+  linkedin: ""       # LinkedIn profile URL (leave empty to hide)
+  orcid: ""          # ORCID URL (leave empty to hide)
+  cv: ""             # e.g. /assets/files/cv.pdf — leave empty to hide the CV button
+
+# Short intro on the home page (Markdown allowed)
+intro: >-
+  I build tools to understand and control quantum light–matter systems — from
+  full simulators of color-center quantum memories to an experimental quantum
+  frequency conversion setup. I'm applying to PhD programs to keep working
+  on quantum networks.
+
+# ─────────────────────────────────────────────────────────────
+#  URL settings
+#  This repo is served at https://tystowell.github.io/TechnicalPortfolio
+#  If you rename the repo to "tystowell.github.io", set baseurl to "".
+# ─────────────────────────────────────────────────────────────
+url: https://tystowell.github.io
+baseurl: /TechnicalPortfolio
+
+# ─────────────────────────────────────────────────────────────
+#  Content
+# ─────────────────────────────────────────────────────────────
+collections:
+  projects:
+    output: true
+    permalink: /work/:name/
+
+defaults:
+  - scope: { path: "", type: projects }
+    values: { layout: project }
+  - scope: { path: "" }
+    values: { layout: page }
+
+markdown: kramdown
+kramdown:
+  math_engine: null   # MathJax renders $...$ / $$...$$ client-side (see _includes/head.html)
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - _templates
+  - vendor

@@ -1,0 +1,28 @@
+---
+layout: default
+title: Work
+permalink: /work/
+description: Research and personal projects — simulation, experiment, machine learning and games.
+---
+{% include ordered-projects.html %}
+<section class="container page">
+  <header class="page-header">
+    <p class="eyebrow mono">Portfolio</p>
+    <h1>Work</h1>
+    <p class="lede">Research in quantum information science, and the things I build for fun. Filter by type, or pick anything to read more.</p>
+  </header>
+
+  <div class="filters" role="group" aria-label="Filter projects">
+    <button type="button" class="chip" data-filter="all" aria-pressed="true">All <span class="count">{{ site.projects.size }}</span></button>
+    {% for cat in site.data.categories %}
+      {% assign n = site.projects | where: "category", cat.id | size %}
+      {% if n > 0 %}
+      <button type="button" class="chip" data-filter="{{ cat.id }}" id="{{ cat.id }}" aria-pressed="false" style="--hue: {{ cat.hue }}"><span class="dot"></span>{{ cat.label }} <span class="count">{{ n }}</span></button>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="card-grid" data-filter-target>
+    {% for p in ordered_projects %}{% include project-card.html project=p %}{% endfor %}
+  </div>
+</section>

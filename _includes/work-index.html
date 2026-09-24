@@ -1,0 +1,35 @@
+{%- comment -%}
+  Grouped list of all projects. Used on the home page (full) and as the
+  "jump to" sidebar on project pages (compact). Pass compact=true for the sidebar.
+{%- endcomment -%}
+{%- include ordered-projects.html -%}
+{%- assign groups = site.data.categories | map: "group" | uniq -%}
+<nav class="work-index{% if include.compact %} work-index-compact{% endif %}" aria-label="All work">
+  {%- for group in groups -%}
+  <section class="wi-group">
+    <h{% if include.compact %}3{% else %}2{% endif %} class="wi-group-title mono">{{ group }}</h{% if include.compact %}3{% else %}2{% endif %}>
+    {%- assign cats = site.data.categories | where: "group", group -%}
+    {%- for cat in cats -%}
+      {%- assign items = ordered_projects | where: "category", cat.id -%}
+      {%- if items.size > 0 -%}
+      <div class="wi-cat" style="--hue: {{ cat.hue }}">
+        <p class="wi-cat-title"><span class="dot"></span>{{ cat.label }}</p>
+        <ol class="wi-list">
+          {%- for p in items -%}
+          <li>
+            <a href="{{ p.url | relative_url }}"{% if p.url == page.url %} aria-current="page"{% endif %}>
+              <span class="wi-title">{{ p.title }}</span>
+              {%- unless include.compact -%}
+              <span class="wi-summary">{{ p.summary }}</span>
+              <span class="wi-year mono">{% if p.period %}{{ p.period }}{% else %}{{ p.date | date: "%Y" }}{% endif %}</span>
+              {%- endunless -%}
+            </a>
+          </li>
+          {%- endfor -%}
+        </ol>
+      </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </section>
+  {%- endfor -%}
+</nav>

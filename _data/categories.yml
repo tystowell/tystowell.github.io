@@ -1,0 +1,28 @@
+# Categories drive the index, filters, colors and "jump to" navigation.
+# `id` is what you put in a project's `category:` front matter.
+# `group` clusters categories into top-level sections, in the order listed here.
+# `hue` is the accent color used for chips, thumbnails and highlights.
+
+- id: simulation
+  label: Theory & Simulation
+  group: Research
+  hue: "#5b5bd6"
+  blurb: Numerical models of quantum devices and networks.
+
+- id: experiment
+  label: Experimental
+  group: Research
+  hue: "#d4462e"
+  blurb: Hands-on optics, photonics and lab systems.
+
+- id: ml
+  label: Machine Learning
+  group: Personal Projects
+  hue: "#0f8b7d"
+  blurb: Learning systems, data and models.
+
+- id: games
+  label: Games & Web
+  group: Personal Projects
+  hue: "#c98a0c"
+  blurb: Playable things, hosted on the web.
