@@ -30,7 +30,7 @@ intro: >-
 #  If you rename the repo to "tystowell.github.io", set baseurl to "".
 # ─────────────────────────────────────────────────────────────
 url: https://tystowell.github.io
-baseurl: /TechnicalPortfolio
+baseurl: ""
 
 # ─────────────────────────────────────────────────────────────
 #  Content
