@@ -19,10 +19,10 @@ author:
 
 # Short intro on the home page (Markdown allowed)
 intro: >-
-  I build tools to understand and control quantum light–matter systems — from
-  full simulators of color-center quantum memories to an experimental quantum
-  frequency conversion setup. I'm applying to PhD programs to keep working
-  on quantum networks.
+  I work on the hardware and theory behind quantum networks: simulators for
+  cavity-coupled color-center memories, photonic chips for quantum key
+  distribution and random number generation, and quantum frequency conversion
+  in the lab. I'm applying to PhD programs to keep building them.
 
 # ─────────────────────────────────────────────────────────────
 #  URL settings

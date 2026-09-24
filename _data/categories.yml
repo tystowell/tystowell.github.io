@@ -10,17 +10,29 @@
   hue: "#5b5bd6"
   blurb: Numerical models of quantum devices and networks.
 
+- id: photonics
+  label: Integrated Photonics
+  group: Research
+  hue: "#c2417a"
+  blurb: Photonic chips for quantum key distribution and randomness generation.
+
 - id: experiment
   label: Experimental
   group: Research
   hue: "#d4462e"
-  blurb: Hands-on optics, photonics and lab systems.
+  blurb: Free-space optics and lab systems.
 
 - id: embedded
   label: Embedded & Hardware
   group: Work Experience
   hue: "#2f7fc1"
   blurb: Firmware and circuit boards built on the job.
+
+- id: teams
+  label: Engineering Teams
+  group: Student Teams
+  hue: "#5f8f3a"
+  blurb: Competition teams at BYU.
 
 - id: ml
   label: Machine Learning

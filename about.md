@@ -21,12 +21,26 @@ solid-state spin–photon interfaces, quantum frequency conversion, and simulati
 
 <!-- Newest first. -->
 
-**Undergraduate Researcher**, TODO Lab — 2024–present
-: TODO: one line on what you did and what came of it.
+**Research Intern**, Center for Quantum Networks (CQN) — Summer 2026
+: Designed and built a [quantum frequency conversion system]({{ '/work/quantum-frequency-conversion/' | relative_url }}).
+
+**Undergraduate Researcher**, TODO Lab — 2022–present
+: Built a [graphical simulator for cavity-coupled color centers]({{ '/work/color-center-memory-simulator/' | relative_url }}),
+  worked on [green machine photonic chips]({{ '/work/green-machine-passive/' | relative_url }}) for conference QKD
+  (coQREATE project), and developed an [integrated homodyne QRNG]({{ '/work/homodyne-qrng/' | relative_url }})
+  deployed at Oak Ridge National Laboratory.
 
 **Engineering Intern**, Harsch Systems — Summer 2021
 : Designed an [RP2040-based industrial I/O board]({{ '/work/rp2040-board/' | relative_url }}) in KiCad and
   brought up [embedded Rust firmware]({{ '/work/embedded-rust-rp2040/' | relative_url }}) on the Raspberry Pi Pico.
+
+## Student teams
+
+**BYU Mars Rover**, science module — 2026–present
+: Responsible for the optical components, including the [fluorescence detector]({{ '/work/byu-mars-rover/' | relative_url }}).
+
+**BYU Rocketry** — freshman year
+: Built a [rocket designed to reach a target altitude]({{ '/work/byu-rocketry/' | relative_url }}).
 
 ## Publications & presentations
 

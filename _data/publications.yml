@@ -1,8 +1,15 @@
-# Papers, posters and talks shown on the About page. Delete the examples and add your own.
+# Papers, posters and talks shown on the About page, newest first.
 # type: paper | preprint | poster | talk
-- title: "TODO: Title of a paper, poster, or talk"
-  authors: "T. Stowell, A. Collaborator, B. Advisor"
-  venue: "Conference or Journal Name"
+- title: "TODO: Paper on the graphical simulator for cavity-coupled color centers"
+  authors: "T. Stowell, et al."
+  venue: "In preparation"
   year: 2026
+  type: preprint
+  url: ""
+
+- title: "TODO: Poster title (passive green machine chip for conference QKD)"
+  authors: "T. Stowell, et al."
+  venue: "Optica Quantum 2.0"
+  year: 2025   # TODO: confirm
   type: poster
   url: ""

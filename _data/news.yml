@@ -1,3 +1,5 @@
 # Short dated updates shown on the home page (newest first). Leave empty ([]) to hide the section.
 - date: 2026-09-01
   text: "Launched this portfolio. Applying to PhD programs for Fall 2027."
+- date: 2026-08-01
+  text: "Finished building a [quantum frequency conversion system](/work/quantum-frequency-conversion/) at CQN."

@@ -1,15 +1,14 @@
 ---
 title: Quantum Frequency Conversion System
-summary: Built an experimental system to convert single photons from a quantum emitter's wavelength to the telecom band while preserving their quantum state.
+summary: Designed and built a free-space quantum frequency conversion setup around a PPLN waveguide chip, reaching ~70% internal conversion efficiency.
 category: experiment
-date: 2024-06-01
-period: 2023 – 2025
+date: 2026-05-01
+period: May – Aug 2026
 status: Completed
 featured: true
-role: "TODO: e.g. Undergraduate researcher — design, alignment, characterization"
-advisor: "TODO: Prof. Name"
-tools: [Nonlinear optics, PPLN waveguides, SNSPDs, Python DAQ]
-math: true
+role: System designer & builder, Center for Quantum Networks (CQN)
+collaborators: UMD
+tools: [Nonlinear optics, PPLN waveguides, Optomechanics, CNC machining]
 # thumbnail: /assets/img/projects/qfc-thumb.jpg
 # hero: /assets/img/projects/qfc-setup.jpg
 # hero_caption: "The conversion setup on the optical table."
@@ -17,24 +16,27 @@ math: true
 
 ## Overview
 
-TODO: Why frequency conversion matters — emitters that make good quantum memories rarely emit at
-low-loss telecom wavelengths, so interfacing them with fiber networks requires converting photons
-without adding noise.
+Quantum memories rarely emit photons at the low-loss telecom wavelengths used by fiber networks.
+Quantum frequency conversion bridges that gap by shifting a photon's wavelength while
+preserving its quantum state. Over the summer at CQN, I designed and built a conversion system
+around an NTT Innovative Devices PPLN waveguide chip.
 
-## Approach
+## What I built
 
-TODO: Describe the process (e.g. difference-frequency generation, $\omega_\text{out} = \omega_\text{in} - \omega_\text{pump}$),
-the nonlinear medium, pump laser, and filtering strategy.
+The waveguide chip and pump laser were selected by my mentor. I designed the rest of the system:
 
-## My contributions
-
-- TODO: What you designed, built, aligned, or automated.
-- TODO: Key measurements — conversion efficiency, noise counts, preserved coherence.
+- **Optics:** dichroic mirrors, filters, lenses and parabolic mirrors for combining, coupling and separating the beams.
+- **Mechanics:** precision alignment mounts, plus a custom chip mount that I designed and CNC-machined.
+- **Stability:** temperature control of the nonlinear chip.
 
 ## Results
 
-TODO: Headline numbers and a photo or plot of the setup.
+| Metric | Value |
+|---|---|
+| Internal conversion efficiency | ~70% |
+| Fiber-to-fiber efficiency | 2.5% |
 
-## Challenges
+Since then, I've planned changes for the team that replace one problematic component, which
+should boost the fiber-to-fiber efficiency significantly.
 
-TODO: The hardest problem you hit and how you solved it. Admissions committees love this section.
+TODO: A photo of the setup and a schematic of the beam path.
