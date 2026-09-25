@@ -1,16 +1,16 @@
 ---
 title: RP2040 Industrial I/O Board
-summary: Designed two generations of an RP2040 industrial I/O board in KiCad, with 0–10 V and current-loop analog I/O and isolated digital I/O. The second version places the bare RP2040 chip directly on a compact surface-mount board.
+summary: Continuing my work at Harsch Systems, I designed two generations of an RP2040 industrial I/O board in KiCad, with 0–10 V and current-loop analog I/O and isolated digital I/O.
 category: embedded
 date: 2021-04-26
-period: Apr – Aug 2021
+period: "2021"
 status: Completed
-role: Engineering intern, Harsch Systems
+role: Engineering Intern, Harsch Systems
 tools: [KiCad, PCB design, Surface-mount design, Analog circuits, RP2040]
 thumbnail: /assets/img/projects/rp2040-board/card.jpg
 hero: /assets/img/projects/rp2040-board/smd-render.jpg
 hero_alt: KiCad 3D render of the surface-mount RP2040 board, with the RP2040 chip at the center surrounded by passives, op-amps and connectors
-hero_caption: "Version 2, the surface-mount board: the bare RP2040 (center) with its own flash, crystal, switching regulator, USB and Qwiic connector, surrounded by the analog and digital I/O circuits."
+hero_caption: "Version 2 of this design, the surface-mount board: the bare RP2040 (center) surrounded by the analog and digital I/O circuits."
 links:
   - label: SMD board (v2)
     url: https://github.com/tyler-stowell/RP2040_SMD_Board
@@ -25,21 +25,18 @@ links:
 
 ## Overview
 
-A board that lets the Raspberry Pi RP2040 microcontroller talk to industrial equipment.
-Industrial systems commonly signal with 0–10 V and current-loop analog levels and 24 V logic,
-none of which a 3.3 V microcontroller can handle directly. The board translates between the two.
-I designed it twice: first as a through-hole carrier for a Raspberry Pi Pico module, then as
-a compact surface-mount board built around the bare RP2040 chip.
+After my first project at HarschSystems, in which I worked on device drivers to improve strict timing constraints for industrial applications, my boss wanted to see if we could build our own architecture to cut costs and improve our system control.
 
-## Version 1: Pi Pico carrier board
+In this project, I designed a board around the Raspberry Pi RP2040 microcontroller. Industrial systems commonly work with 0–10 V and 4-20 mA signals, none of which a 3.3 V microcontroller can handle directly. This board enables that control for the digital processor. I designed it twice: first as a through-hole carrier for a Raspberry Pi Pico module, then as a compact surface-mount board built around the bare RP2040 chip.
 
-- **Analog outputs:** the Pico's PWM outputs are smoothed by active low-pass filters and scaled
-  by LM324 op-amp stages into a **0–10 V** output and a **20 mA** current-loop output.
-- **Analog inputs:** a voltage divider, voltage follower and low-pass filter bring a **0–10 V**
-  signal down to the ADC's 3.3 V range. A second stage converts a **20 mA** current-loop input.
-- **Digital I/O:** inputs and outputs are **optically isolated** with PC817 optocouplers, with
-  BC337 transistor drivers on the outputs and status LEDs on every channel.
-- **Power:** runs from a **24 V** supply.
+## Circuit Design
+
+First, I had to learn a little more about circuit design. My boss had an additional requirement that he wanted optically isolated inputs (using PC817 optocouplers), and built in filters for analog control. Before doing any design, I prototyped the following subsystems:
+
+1) **Analog outputs:** the Pico's PWM outputs were smoothed by active low-pass filters and scaled by LM324 op-amp stages into a **0–10 V** output or a **20 mA** current-loop output.
+2) **Analog inputs:** a voltage divider, voltage follower and low-pass filter brought a **0–10 V** signal down to the ADC's 3.3 V range. A different stage converted the **4-20 mA** input.
+3) **Digital I/O:** inputs and outputs were optically isolated with PC817 optocouplers, with BC337 transistor drivers on the outputs and status LEDs on every channel.
+4) **Power:** the board runs from a **24 V** supply.
 
 <div class="figure-row">
   <figure>
@@ -52,24 +49,15 @@ a compact surface-mount board built around the bare RP2040 chip.
   </figure>
 </div>
 
-## Version 2: surface-mount board
+## The final board
 
-The second version (July – August 2021) drops the Pico module and puts the **RP2040 chip
-directly on the board**, which meant designing the support circuitry the Pico normally
-provides:
+The second version dropped the whole Pico module and put the RP2040 chip directly on the board, which meant designing the support circuitry the Pico normally provides, such as the QSPI flash, crystal for the clock, a TPS56339 switching regulator for power, the USB for programming, and I2C connectors for auxilliary sensors.
 
-- **QSPI flash** (W25Q32JV) for program storage, and a **crystal** for the clock.
-- **Power:** a TPS56339 **switching regulator** steps the industrial supply down efficiently,
-  followed by a 3.3 V LDO for the logic.
-- **USB** for programming, a boot button, and test points.
-- A **Qwiic I²C connector** for plugging in sensors.
+The final designed board is shown below.
 
 [![KiCad PCB layout of the surface-mount board, showing dense routing fanning out from the RP2040 at the center, wide power traces on the right and connectors along the edges]({{ '/assets/img/projects/rp2040-board/smd-layout.png' | relative_url }})]({{ '/assets/img/projects/rp2040-board/smd-layout.png' | relative_url }})
-*The version 2 layout in KiCad. Signal traces fan out from the RP2040 at the center, the wide traces on the right carry power from the 24 V input, and the analog and digital I/O circuits line the connectors along the edges. Click to enlarge.*
+*The final version layout in KiCad. Signal traces fan out from the RP2040 at the center, the wide traces on the right carry power from the 24 V input, and the analog and digital I/O circuits line the connectors along the edges. Click to enlarge.*
 
-Moving to surface-mount parts made the board far more compact. Routing it meant working out
-trace widths for the power and analog paths and adding vias for heat dissipation. Late in
-routing I caught that the optocoupler on the 24 V outputs wasn't rated high enough for that
-voltage.
+Moving to surface-mount parts made the board far more compact. Routing it meant working out trace widths for the power and analog paths and adding vias for heat dissipation.
 
-TODO: How the optocoupler issue was resolved, and whether either board was fabricated and tested.
+I was unable to test the final board before I left, but I gave my boss good documentation and all the associated files to enable the tests to be run in the future.

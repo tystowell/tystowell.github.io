@@ -1,6 +1,6 @@
 ---
 title: Keyless Caesar Cipher Decryption
-summary: Used a character-frequency dataset to decrypt a caesar shifted plaintext without the key. The first time I learned about the concept of information entropy, and I had to try something out for myself.
+summary: Used a character-frequency dataset to decrypt a caesar shifted plaintext without the key. A fun little project that seemed like magic to me at the time.
 category: software
 date: 2018-04-17
 period: "2018"

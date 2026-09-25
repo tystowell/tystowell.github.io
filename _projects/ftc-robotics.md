@@ -1,6 +1,6 @@
 ---
 title: "FTC Robotics: Autonomous & Programming Lead"
-summary: For two seasons, I was the autonomous and programming lead for my high school FTC robotics team.
+summary: For two seasons, I was the autonomous and programming lead for my high school FTC robotics team. I wrote code to autonomously locate the robot using computer vision techniques and reference photos.
 category: teams
 date: 2017-09-01
 period: 2017 – 2020

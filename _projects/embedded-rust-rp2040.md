@@ -1,12 +1,12 @@
 ---
 title: Embedded Rust on the Raspberry Pi Pico
-summary: Brought up Rust firmware on the RP2040 microcontroller during a summer internship at Harsch Systems. There was no official SDK support, so I worked from the C SDK as a reference.
+summary: I worked on implementing a Rust compiler for the RP2040 microcontroller during a summer internship at Harsch Systems. There was no official SDK support, so I worked from the C SDK as a reference, which was very helpful.
 category: embedded
 date: 2021-06-17
-period: Summer 2021
+period: "2021"
 status: Completed
-role: Engineering intern, Harsch Systems
-tools: [Rust, Embedded HAL, RP2040, Cortex-M]
+role: Engineering Intern, Harsch Systems
+tools: [Rust, Embedded HAL, RP2040]
 thumbnail: /assets/img/projects/embedded-rust/card.png
 links:
   - label: Write-up & code
@@ -19,36 +19,25 @@ links:
 
 ## Overview
 
-The Raspberry Pi Foundation's SDK for the RP2040 is written in C, so running **Rust** on the
-Pi Pico meant working through the embedded Rust stack directly. I used the C SDK as a reference
-while debugging.
+This was my last project at HarschSystems before I left for college, and it was probably the most difficult as well. The Raspberry Pi Foundation's SDK for the RP2040 was written in C, but my boss wanted to be able to run Rust. This meant bringing up the embedded Rust stack directly, since at the time the RP2040 was new and unsupported (now, Rust is supported on the RP2040). I used the C SDK as a reference.
 
 <figure class="figure-inset">
   <img src="{{ '/assets/img/projects/embedded-rust/rp2040-pinout.png' | relative_url }}" alt="Pinout diagram of the RP2040 chip, showing GPIO, QSPI, USB, power and debug pins around a 56-pin package" style="width: min(100%, 320px);">
-  <figcaption>The RP2040's 56 pins: 30 GPIO (four doubling as ADC inputs), QSPI flash, USB, power and debug. Every peripheral used here is reached through these pins and the registers behind them. Figure: Raspberry Pi RP2040 datasheet.</figcaption>
+  <figcaption>The RP2040's 56 pins: 30 GPIO (four doubling as ADC inputs), QSPI flash, USB, power and debug. Every peripheral used is reached through these pins and the registers behind them. Figure: Raspberry Pi RP2040 datasheet.</figcaption>
 </figure>
 
 ## The embedded Rust stack
 
-Embedded Rust splits the job of talking to hardware across several crates, from low-level
-register access up to friendly hardware abstractions:
+Trying to get Embedded Rust working on the RP2040 was incredibly difficult, and I only managed to implement a few peripherals before I finished. The Embedded Rust crate stack splits the job of talking to hardware across several crates, from low-level register access up to friendly hardware abstractions.
 
 ![Diagram of the embedded Rust crate stack, from board and HAL crates down through the micro-architecture and peripheral access crates to the microcontroller's hardware]({{ '/assets/img/projects/embedded-rust/rust-stack.png' | relative_url }})
 *The embedded Rust stack, from high abstraction (left) to the hardware (right). The example microcontroller shown is an STM32F3, but the same structure applies to the RP2040. Figure: [The Embedded Rust Book](https://docs.rust-embedded.org/book/start/registers.html).*
 
-- **Micro-architecture crate** (`cortex-m`): routines common to the core, like panic behavior.
-- **Peripheral access crate** (`rp2040-pac`): raw, register-level access generated from the chip's SVD file.
-- **Hardware abstraction layer** (`rp-hal`): turns register sequences into simple calls. For
-  example, a single call to turn on an LED replaces a series of reset, pad and GPIO register writes.
+## Register level control
 
-I also wrote up a guide to this stack in the repository's README.
+I wrote test programs for GPIO pins, the ADC, and PWM control, configuring each peripheral register by register directly via the peripheral access crate. This involved taking it out of reset, selecting pin functions, and setting up clocks, counters and duty cycles.
 
-## Driving peripherals at the register level
-
-I wrote test programs for **GPIO (blinky)**, the **ADC** and **PWM**, configuring each
-peripheral register by register through the peripheral access crate: taking it out of reset,
-selecting pin functions, and setting up clocks, counters and duty cycles. Here is the PWM setup,
-which brings the peripheral out of reset and configures channel 0 for a 50% duty cycle:
+As an example of the code I had to write, here is the PWM setup, which brings the peripheral out of reset and configures channel 0 for a 50% duty cycle (note that I referred frequently to the official C SDK to understand the correct ordering here)
 
 ```rust
 // Take the PWM block out of reset, and wait for it
@@ -63,6 +52,4 @@ pwm.ch0_csr.write(|w| w.en().set_bit());                          // Enable the 
 io.gpio[0].gpio_ctrl.write_with_zero(|w| w.funcsel().pwm_a_0());  // Route PWM to GPIO 0
 ```
 
-[All three examples are on GitHub](https://github.com/tystowell/embedded-rust-rp2040/tree/HEAD/examples).
-
-TODO: What the firmware was ultimately used for at Harsch Systems.
+This project only lasted a short time of my total duration at HarschSystems. In the end, I left my boss with some working examples that had been tested on an RP2040 and some documentation with a guide of how to proceed.

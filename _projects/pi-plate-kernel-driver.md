@@ -1,12 +1,12 @@
 ---
 title: Linux Kernel Driver for Pi-Plates
-summary: Wrote a Linux kernel driver and companion C library so a Raspberry Pi could reliably drive Pi-Plates expansion boards under heavy load, replacing a Python GPIO approach that missed the boards' strict timing requirements.
+summary: This was the first project of my first internship. I wrote a Linux kernel driver so a Raspberry Pi could drive Pi-Plates expansion boards.
 category: embedded
 date: 2020-06-24
-period: Summer 2020
+period: "2020"
 status: Completed
-role: Engineering intern, Harsch Systems
-tools: [C, Linux kernel, SPI, GPIO, Device tree]
+role: Engineering Intern, Harsch Systems
+tools: [C, Linux kernel, SPI, GPIO]
 # thumbnail / hero: add your own photo of a Pi with a plate attached
 links:
   - label: Kernel driver
@@ -19,40 +19,12 @@ links:
 
 ## The problem
 
-Harsch Systems' Raspberry Pis communicated with [Pi-Plates](https://pi-plates.com/) expansion
-boards through the Python `RPi.GPIO` library. That normally works, but under heavy load it
-broke down: the library forced frequent, expensive context switches, and the program's many
-delays left it exposed to being taken off the processor long enough to miss the plates' strict
-timing requirements. My task was to move all of the I/O and the Pi-Plate protocol **into the
-kernel**, where the timing could be controlled.
+I worked under Mike Harsch at Harsch Systems for an internship that spanned most of the COVID era. He built industrial control systems that relied on a [raspberry pi plate add-on board](https://pi-plates.com/). Communication to these happened over the standard Python RPi.GPIO library. That normally works, but under heavier loads the library would force frequent, expensive context switches, which would sometimes cause it to miss strict timing requirements. My task was to move all of the I/O and the Pi-Plate protocol into the kernel, where the timing could be controlled.
 
-## Learning kernel development
+I had never worked in kernel space, so this was a big learning experience for me. I relied heavily on the book *Linux Device Drivers* to learn how these things worked.
 
-I had never worked in kernel space, so I started by reading *Linux Device Drivers* and
-working through its example projects. My first driver was deliberately simple: controlling an
-LED with a button, but written as a kernel module driven by **interrupts**.
-
-## The driver
-
-The finished module ([pi-plate-module](https://github.com/Harsch-Systems/pi-plate-module)):
-
-- **Talks to the plates over SPI**, managing the frame, acknowledge and interrupt GPIO lines
-  the protocol depends on. Plates that signal "ready" on an acknowledge pin (DAQC2, TINKER,
-  THERMO) and plates that don't (DAQC, RELAY, MOTOR) are both supported.
-- **Detects timing violations:** if the process is descheduled for too long in the middle of a
-  transfer, the driver notices and restarts the transaction instead of returning bad data.
-- **Exposes a character device** that user programs call with a single `ioctl` command, with a
-  mutex so concurrent programs can't interleave transactions.
-- **Loads through a device tree overlay** and has a configurable debug-logging level.
+The finished module ([pi-plate-module](https://github.com/Harsch-Systems/pi-plate-module)) talks to the plates over SPI, manages acknowledge and interrupt GPIO lines, detects timing violations, exposes a device in the standard /dev folder, and was far more reliable than the previous implementation. It supports all the pi-plate devices, including newer ones that used slightly different timings and protocols.
 
 ## The C library
 
-On top of the driver I wrote [pi-plate-io](https://github.com/Harsch-Systems/pi-plate-io), a
-user-space C library that wraps each plate's commands: reading inputs and temperatures,
-driving relays and stepper motors, generating waveforms, and capturing two-channel
-oscilloscope traces.
-
-*This work was done under a separate GitHub account (`tyler-stowell`) and lives in the Harsch
-Systems organization.*
-
-TODO: Did the driver go into production use, and how much did it improve reliability?
+On top of the driver I wrote [pi-plate-io](https://github.com/Harsch-Systems/pi-plate-io), a user-space C library that wraps these kernel space commands to the pi-plates. These can read inputs and temperatures, drive relays and stepper motors, generate waveforms, and capturing oscilloscope style traces.
