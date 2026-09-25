@@ -51,6 +51,11 @@ When Tyler says "I added photos/figures for X", do all of this:
 </figure>
 ```
 
+**Videos:** convert phone `.mov` files (often HEVC, which not every browser plays) to H.264
+MP4 with `avconvert --source in.mov --preset Preset1280x720 --output out.mp4`, and delete the
+`.mov`. Add a poster frame (`poster=`), and use `autoplay muted loop playsinline controls`.
+`<video>` works inside `figure-inset` and `figure-row`.
+
 In Markdown, a full-width image is `![alt]({{ '/assets/…' | relative_url }})` followed by an
 italic `*caption*` line. For a wide image with small text, wrap it in a link to itself so a
 click opens it full size.

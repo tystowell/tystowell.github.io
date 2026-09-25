@@ -34,6 +34,12 @@
   hue: "#b5563a"
   blurb: Major design projects from BYU engineering courses.
 
+- id: robotics
+  label: Robotics & Controls
+  group: Personal Projects
+  hue: "#d06b2a"
+  blurb: Robots built from scratch, from mechanical design to control code.
+
 - id: ml
   label: Machine Learning
   group: Personal Projects
