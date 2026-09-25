@@ -32,7 +32,7 @@
   label: Engineering Teams
   group: Student Teams
   hue: "#5f8f3a"
-  blurb: Competition teams at BYU.
+  blurb: Competition engineering teams, from high school robotics to BYU.
 
 - id: ml
   label: Machine Learning
