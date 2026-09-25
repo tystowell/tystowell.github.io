@@ -64,6 +64,9 @@ provides:
 - **USB** for programming, a boot button, and test points.
 - A **Qwiic I²C connector** for plugging in sensors.
 
+[![KiCad PCB layout of the surface-mount board, showing dense routing fanning out from the RP2040 at the center, wide power traces on the right and connectors along the edges]({{ '/assets/img/projects/rp2040-board/smd-layout.png' | relative_url }})]({{ '/assets/img/projects/rp2040-board/smd-layout.png' | relative_url }})
+*The version 2 layout in KiCad. Signal traces fan out from the RP2040 at the center, the wide traces on the right carry power from the 24 V input, and the analog and digital I/O circuits line the connectors along the edges. Click to enlarge.*
+
 Moving to surface-mount parts made the board far more compact. Routing it meant working out
 trace widths for the power and analog paths and adding vias for heat dissipation. Late in
 routing I caught that the optocoupler on the 24 V outputs wasn't rated high enough for that
