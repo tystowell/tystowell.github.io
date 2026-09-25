@@ -13,3 +13,10 @@
   year: 2025   # TODO: confirm
   type: poster
   url: ""
+
+- title: "TODO: Title of the Simphony paper"
+  authors: "TODO: author list (…, T. Stowell, …)"
+  venue: "TODO: Journal"
+  year: 2025   # TODO: confirm
+  type: paper
+  url: ""

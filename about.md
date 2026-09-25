@@ -28,7 +28,8 @@ solid-state spin–photon interfaces, quantum frequency conversion, and simulati
 : Built a [graphical simulator for cavity-coupled color centers]({{ '/work/color-center-memory-simulator/' | relative_url }}),
   worked on [green machine photonic chips]({{ '/work/green-machine-passive/' | relative_url }}) for conference QKD
   (coQREATE project), and developed an [integrated homodyne QRNG]({{ '/work/homodyne-qrng/' | relative_url }})
-  deployed at Oak Ridge National Laboratory.
+  deployed at Oak Ridge National Laboratory. Contributed quantum simulation features to CamachoLab's
+  [Simphony]({{ '/work/simphony/' | relative_url }}) photonic circuit simulator.
 
 **Engineering Intern**, Harsch Systems — Summer 2021
 : Designed an [RP2040-based industrial I/O board]({{ '/work/rp2040-board/' | relative_url }}) in KiCad and
