@@ -45,6 +45,28 @@ The system runs on a Basys3 board with a Xilinx **Artix-7** FPGA:
   (seeded through a bootstrap control input), a multiplier and an accumulator compresses the raw samples into random output bits.
 - **Output:** a transmit controller and USB controller stream the results to a host computer through an FT2232 USB chip.
 
+### Toeplitz hashing in hardware
+
+Toeplitz hashing multiplies the raw bits by a random binary matrix, with all arithmetic done
+modulo 2. In that arithmetic, multiplying bits is an **AND** and adding them is an **XOR**, so
+the whole hash reduces to a grid of simple logic gates, which is exactly what an FPGA does well.
+
+![A 2×2 binary matrix multiplied by a vector modulo 2, next to the equivalent circuit of AND gates feeding XOR gates]({{ '/assets/img/projects/toeplitz/gf2-multiply.png' | relative_url }})
+*A small example: the matrix product modulo 2 (left) and the same computation built from AND and XOR gates (right).*
+
+### Simulation & implementation
+
+I verified the design in simulation before running it on the board, then synthesized and
+placed it on the Artix-7 in Xilinx Vivado.
+
+![Vivado simulation waveform showing input data, hash results, the clock and the bootstrap control signal, with red and blue marks linking parts of the matrix register to results]({{ '/assets/img/projects/toeplitz/hasher-simulation.png' | relative_url }})
+*Simulating the hasher in Vivado: input data, hash results, the clock and the bootstrap control signal. The red and blue marks link parts of the Toeplitz matrix register (left) to the results they produce (right).*
+
+<figure class="figure-inset">
+  <img src="{{ '/assets/img/projects/toeplitz/vivado-placement.png' | relative_url }}" alt="Vivado device view of the Artix-7 FPGA, with the design's logic placed across the chip" style="width: min(100%, 360px);">
+  <figcaption>The synthesized design placed on the Artix-7, in Vivado's device view.</figcaption>
+</figure>
+
 ## Randomness tests
 
 The extracted output passes the full **NIST SP 800-22** statistical test suite. Every test

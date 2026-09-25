@@ -7,12 +7,11 @@ period: Freshman year
 status: Completed
 role: Team member
 collaborators: BYU Rocketry
-tools: [Rocketry, Flight simulation]
+tools: [OpenRocket, Flight simulation, Rocketry]
 thumbnail: /assets/img/projects/byu-rocketry/card.jpg
 hero: /assets/img/projects/byu-rocketry/competition-day.jpg
 hero_alt: Aerial drone view of a rocket launching from a desert range, trailing a white smoke plume, with launch rails, parked cars and spectators nearby
 hero_caption: "Competition day, from a drone above the launch range. The rocket in flight belongs to another team. Video still: BYU Rocketry Club."
-# Design/simulation figures (e.g. flight-simulation screenshots) can go in a "Design" section later.
 ---
 
 ## Overview
@@ -25,5 +24,13 @@ target altitude.
   <figcaption>My finished rocket: a black nose cone, a blue airframe and three fins at the base.</figcaption>
 </figure>
 
-TODO: The target altitude, how you designed for it (simulation, motor choice, mass and drag),
-and how close the flight came.
+## Design
+
+I designed the rocket in [OpenRocket](https://openrocket.info/), an open-source flight
+simulator that predicts a rocket's stability and trajectory for a given motor.
+
+[![Rocket design sheet: a side profile of the rocket, its mass, stability, center of gravity and center of pressure, and a simulated flight on a G74W-9 motor reaching 1697 ft]({{ '/assets/img/projects/byu-rocketry/design-sim.png' | relative_url }})]({{ '/assets/img/projects/byu-rocketry/design-sim.png' | relative_url }})
+*The design and simulated flight. With the motor installed the rocket weighs 365 g, and its center of pressure sits 1.28 calibers behind its center of gravity, so it flies stably. On a G74W-9 motor, the simulation predicts an apogee of 1697 ft, reached 8.5 s after launch, and a peak speed of 188 m/s.*
+
+TODO: The target altitude, what you adjusted to hit it (motor choice, mass, delay), and how
+close the actual flight came.

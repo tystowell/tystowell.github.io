@@ -39,6 +39,9 @@ generator.
 - **Digitization and extraction:** the Basys3 board's ADCs and FPGA turn the signals into certified
   random bits and send them on to a server.
 
+![PCB layout of the detector board, with SMA connectors around the edge labeled for supply, bias, reference and output signals, and yellow lines drawn over the layout]({{ '/assets/img/projects/homodyne-qrng/detector-pcb.jpg' | relative_url }})
+*Layout of the detector's circuit board. SMA connectors around the edge bring in the supplies, bias and reference voltages, and carry out the two amplified outputs (VOUT1, VOUT2).*
+
 This page covers the experimental side. The FPGA system and theory, which were my main
 contribution, are on the [QRNG FPGA Control & Randomness Extraction]({{ '/work/qrng-fpga/' | relative_url }}) page.
 
