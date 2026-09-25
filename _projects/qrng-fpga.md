@@ -8,10 +8,10 @@ status: Completed
 featured: true
 role: FPGA design & QRNG theory
 tools: [FPGA, Artix-7, Toeplitz hashing, Entropy estimation, C]
-thumbnail: /assets/img/projects/toeplitz/fpga-card.png
-hero: /assets/img/projects/toeplitz/fpga-block-diagram.png
-hero_alt: Block diagram of the FPGA post-processing system
-hero_caption: "The FPGA post-processing system: the amplified quantum signal is digitized, buffered, hashed by a hardware Toeplitz extractor and streamed out over USB."
+thumbnail: /assets/img/projects/toeplitz/fpga-board.jpg
+hero: /assets/img/projects/toeplitz/fpga-board.jpg
+hero_alt: Basys3 FPGA board with four SMA signal inputs and labeled control switches
+hero_caption: "The QRNG's Basys3 FPGA board. Differential SMA inputs carry the X and P quadrature signals, and slide switches select the operating mode and which quadrature is sampled."
 links:
   - label: Experimental side
     url: /work/homodyne-qrng/
@@ -35,6 +35,9 @@ all of that: the FPGA system and the theory behind it.
 ## FPGA architecture
 
 The system runs on a Basys3 board with a Xilinx **Artix-7** FPGA:
+
+![Block diagram of the FPGA post-processing system]({{ '/assets/img/projects/toeplitz/fpga-block-diagram.png' | relative_url }})
+*The FPGA design: the amplified quantum signal is digitized, buffered, hashed by a hardware Toeplitz extractor and streamed out over USB.*
 
 - **Digitization:** the transimpedance amplifier's output is sampled by the FPGA's 12-bit XADC, clocked from a 100 MHz oscillator.
 - **Buffering:** a receive controller passes samples through an asynchronous FIFO, so no data is lost between clock domains.

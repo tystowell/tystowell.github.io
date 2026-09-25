@@ -8,8 +8,10 @@ status: Completed
 role: Edge coupling, experimental work & on-site deployment
 collaborators: Oak Ridge National Laboratory
 tools: [Homodyne detection, Photonic chips, Edge coupling, Transimpedance amplifiers]
-# thumbnail: /assets/img/projects/qrng-thumb.jpg
-# hero: /assets/img/projects/qrng-setup.jpg
+thumbnail: /assets/img/projects/homodyne-qrng/chip.jpg
+hero: /assets/img/projects/homodyne-qrng/system-diagram.png
+hero_alt: Block diagram of the QRNG from local oscillator and vacuum input through the photonic chip, TIAs and FPGA to a server
+hero_caption: "The full QRNG: a local oscillator and the vacuum state are mixed on the photonic chip, amplified by the TIAs, then digitized and processed on the FPGA board before the random numbers go to a server."
 links:
   - label: FPGA & theory side
     url: /work/qrng-fpga/
@@ -27,10 +29,23 @@ quantum-noise-limited. This project co-designed a photonic chip and on-chip tran
 amplifiers to reach that regime, then turned the detector into a working quantum random number
 generator.
 
+## The system
+
+- **Photonic integrated circuit (PIC):** the local oscillator and the vacuum input are combined
+  in a multimode interference (MMI) coupler and split into four arms, each with a Mach–Zehnder
+  modulator (MZM) and a photodiode.
+- **Transimpedance amplifiers (TIAs):** pairs of photodiodes feed two custom TIAs, which turn the
+  tiny photocurrent differences into voltages. Those voltages carry the amplified vacuum noise.
+- **Digitization and extraction:** the Basys3 board's ADCs and FPGA turn the signals into certified
+  random bits and send them on to a server.
+
 This page covers the experimental side. The FPGA system and theory, which were my main
 contribution, are on the [QRNG FPGA Control & Randomness Extraction]({{ '/work/qrng-fpga/' | relative_url }}) page.
 
 ## Edge coupling & experimental work
+
+![Photo of the TIA die and photonic chip wire-bonded onto a shared circuit board]({{ '/assets/img/projects/homodyne-qrng/chip.jpg' | relative_url }})
+*The packaged detector: the TIA die (center) and the photonic chip (right), wire-bonded onto a shared board.*
 
 TODO: Coupling light into and out of the photonic chip through its edge facets, what the
 alignment involved, and the measurements you took (for example, showing the detector was
@@ -39,5 +54,3 @@ quantum-noise-limited).
 ## Deployment at Oak Ridge National Laboratory
 
 I worked on site at ORNL to set the system up as the random number source for their QKD system.
-
-TODO: A photo of the chip or the setup.

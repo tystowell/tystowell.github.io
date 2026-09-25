@@ -287,6 +287,15 @@ p { margin: 0 0 1em; }
 .prose li::marker { color: var(--muted); }
 .prose img { border-radius: var(--radius-sm); border: 1px solid var(--line); margin: 1.5em 0 .5em; }
 .prose figure { margin: 2em 0; }
+/* Side-by-side figures: <div class="figure-row"><figure>…</figure><figure>…</figure></div> */
+.prose .figure-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px; align-items: start; margin: 2em 0; }
+.prose .figure-row figure { margin: 0; }
+.prose .figure-row img { margin: 0; width: 100%; }
+/* Small figure with the caption beside it (for low-resolution images): <figure class="figure-inset">…</figure> */
+.prose .figure-inset { display: flex; align-items: center; gap: 20px; margin: 2em 0; }
+.prose .figure-inset img { margin: 0; width: min(100%, 420px); flex: none; }
+.prose .figure-inset figcaption { margin: 0; }
+@media (max-width: 640px) { .prose .figure-inset { flex-direction: column; align-items: flex-start; } }
 .prose figcaption, .project-hero figcaption, .embed figcaption { font-size: .85rem; color: var(--muted); margin-top: .6em; }
 .prose blockquote { margin: 1.5em 0; padding: .2em 0 .2em 1.2em; border-left: 3px solid var(--hue); font-family: var(--font-serif); font-size: 1.15rem; font-style: italic; }
 .prose code { font: .86em var(--font-mono); background: var(--bg-alt); border: 1px solid var(--line); padding: .1em .35em; border-radius: 5px; }
