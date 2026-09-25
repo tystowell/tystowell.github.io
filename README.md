@@ -48,7 +48,6 @@ Useful front matter:
 | `_data/categories.yml` | Categories, their groups (Research / Personal Projects) and colors |
 | `_data/navigation.yml` | Top navigation links |
 | `_data/publications.yml` | Papers, posters and talks on the About page |
-| `_data/news.yml` | Dated updates on the home page |
 | `about.md` | About page (bio, education, skills) |
 | `assets/css/main.css` | All styling. Colors and fonts are CSS variables at the top |
 

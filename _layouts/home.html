@@ -67,22 +67,6 @@ body_class: home
   </div>
 </section>
 
-{% if site.data.news and site.data.news.size > 0 %}
-<section class="section">
-  <div class="container narrow">
-    <header class="section-header">
-      <p class="eyebrow mono">03 — Updates</p>
-      <h2>News</h2>
-    </header>
-    <ul class="news">
-      {% for n in site.data.news %}
-      <li><time class="mono" datetime="{{ n.date | date_to_xmlschema }}">{{ n.date | date: "%b %Y" }}</time><span>{{ n.text | markdownify | remove: '<p>' | remove: '</p>' }}</span></li>
-      {% endfor %}
-    </ul>
-  </div>
-</section>
-{% endif %}
-
 {{ content }}
 
 {% if site.hero_photo == nil or site.hero_photo.bloch %}<script src="{{ '/assets/js/bloch.js' | relative_url }}" defer></script>{% endif %}
