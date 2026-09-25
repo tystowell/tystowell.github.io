@@ -9,8 +9,10 @@ featured: true
 role: Simulation, theory & characterization
 collaborators: Tyndall National Institute, UMD (coQREATE project)
 tools: [Photonic integrated circuits, Digital twin, QKD security analysis]
-# thumbnail: /assets/img/projects/green-machine-passive-thumb.png
-# hero: /assets/img/projects/green-machine-passive-chip.jpg
+thumbnail: /assets/img/projects/green-machine-passive/packaged-chip.jpg
+hero: /assets/img/projects/green-machine-passive/packaged-chip.jpg
+hero_alt: The packaged green machine chip in its mount, with fiber arrays attached to both edges
+hero_caption: "The packaged chip, with fiber arrays attached to both edges, in its mount on the optical table."
 links:
   - label: Active version
     url: /work/green-machine-active/
@@ -31,6 +33,14 @@ performance. I presented this work as a poster at **Optica Quantum 2.0**.
   achieve, including **decoy states** and **finite-key effects**.
 - **Packaging coordination:** met biweekly with collaborators at Tyndall National Institute to coordinate chip packaging.
 
-The follow-up, an [active version of the chip]({{ '/work/green-machine-active/' | relative_url }}), is now in design.
+## Predicted key rates
 
-TODO: A chip photo or micrograph, and a key-rate plot from your simulations.
+Using the characterized chip, my simulations predict that it can distribute a shared secret key
+to **3 parties over about 245 km** of fiber, **4 parties over about 195 km** and **5 parties over
+about 155 km**. At long range that beats even ideal GHZ-state protocols, whose rates fall off much
+faster with distance.
+
+![Plot of asymptotic conference key rate versus range for 3-, 4- and 5-party networks, comparing the characterized chip, an ideal chip, ideal GHZ protocols and recent experiments]({{ '/assets/img/projects/green-machine-passive/key-rates.png' | relative_url }})
+*Asymptotic key rate versus range for 3-, 4- and 5-party conference key agreement. Solid lines use the characterized chip, dashed lines an ideal chip, and dash-dot lines ideal GHZ-state protocols. Markers show recent experiments for comparison.*
+
+The follow-up, an [active version of the chip]({{ '/work/green-machine-active/' | relative_url }}), is now in design.

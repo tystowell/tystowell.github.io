@@ -44,8 +44,16 @@ contribution, are on the [QRNG FPGA Control & Randomness Extraction]({{ '/work/q
 
 ## Edge coupling & experimental work
 
-![Photo of the TIA die and photonic chip wire-bonded onto a shared circuit board]({{ '/assets/img/projects/homodyne-qrng/chip.jpg' | relative_url }})
-*The packaged detector: the TIA die (center) and the photonic chip (right), wire-bonded onto a shared board.*
+<div class="figure-row">
+  <figure>
+    <img src="{{ '/assets/img/projects/homodyne-qrng/microscope-alignment.jpg' | relative_url }}" alt="Microscope objective above the chip's alignment stage, with Tyler out of focus behind it">
+    <figcaption>The microscope objective and alignment stage used to line the chip up.</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/assets/img/projects/homodyne-qrng/chip.jpg' | relative_url }}" alt="Photo of the TIA die and photonic chip wire-bonded onto a shared circuit board">
+    <figcaption>The packaged detector: the TIA die (center) and the photonic chip (right), wire-bonded onto a shared board.</figcaption>
+  </figure>
+</div>
 
 TODO: Coupling light into and out of the photonic chip through its edge facets, what the
 alignment involved, and the measurements you took (for example, showing the detector was

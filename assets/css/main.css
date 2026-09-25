@@ -192,6 +192,16 @@ p { margin: 0 0 1em; }
 .b-tip { fill: var(--accent); }
 .b-origin { fill: var(--ink); }
 
+/* Hero photo */
+.hero-photo { margin: 0; justify-self: center; width: 100%; max-width: 440px; }
+.hero-photo img {
+  width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 65% 50%;
+  border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow-hover);
+}
+.hero-photo figcaption { margin-top: 12px; font-size: .78rem; text-align: center; }
+.hero-photo figcaption a { color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: .4em; }
+.hero-photo figcaption a:hover { color: var(--accent-ink); }
+
 /* ---------- Sections ---------- */
 .section { padding: clamp(56px, 8vw, 96px) 0; }
 .section-alt { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -272,7 +282,17 @@ p { margin: 0 0 1em; }
 /* ---------- Generic pages ---------- */
 .page { padding-top: clamp(40px, 7vw, 80px); padding-bottom: clamp(56px, 8vw, 96px); }
 .page-header { margin-bottom: 40px; max-width: 760px; }
+/* Page header with a photo (set `photo:` in a page's front matter) */
+.page-header-photo { max-width: none; display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: clamp(24px, 5vw, 64px); align-items: center; }
+.page-photo { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 70% 50%; border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow-hover); }
+@media (max-width: 700px) {
+  .page-header-photo { grid-template-columns: 1fr; }
+  .page-photo { order: -1; max-width: 240px; }
+}
 .page-404 { min-height: 50vh; }
+.page-404-inner { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; }
+.page-404 .bloch { max-width: 300px; }
+@media (max-width: 900px) { .page-404-inner { grid-template-columns: 1fr; } .page-404 .bloch { max-width: 220px; justify-self: start; } }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
 
 /* ---------- Prose (Markdown content) ---------- */
@@ -369,6 +389,7 @@ p { margin: 0 0 1em; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-figure { order: -1; }
   .bloch { max-width: 240px; }
+  .hero-photo { max-width: 320px; }
   .project-layout { grid-template-columns: 1fr; }
   .project-sidebar { position: static; max-height: none; overflow: visible; order: 2; border-top: 1px solid var(--line); padding-top: 24px; }
   .wi-list a { grid-template-columns: 2.2em 1fr auto; }

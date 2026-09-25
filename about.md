@@ -2,6 +2,8 @@
 title: About
 permalink: /about/
 eyebrow: About me
+photo: /assets/img/tyler-lab.jpg
+photo_alt: Tyler adjusting a micrometer stage under a microscope in the lab
 lede: "TODO: one or two sentences on who you are and what you want to work on in grad school."
 ---
 

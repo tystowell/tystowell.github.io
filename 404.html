@@ -4,7 +4,13 @@ title: Not found
 permalink: /404.html
 ---
 <section class="container page page-404">
-  <p class="eyebrow mono">Error 404</p>
-  <h1>This page decohered.</h1>
-  <p class="lede">The page you're looking for isn't here. Try the <a href="{{ '/work/' | relative_url }}">index of work</a> or head <a href="{{ '/' | relative_url }}">home</a>.</p>
+  <div class="page-404-inner">
+    <div>
+      <p class="eyebrow mono">Error 404</p>
+      <h1>This page decohered.</h1>
+      <p class="lede">The page you're looking for isn't here. Try the <a href="{{ '/work/' | relative_url }}">index of work</a> or head <a href="{{ '/' | relative_url }}">home</a>.</p>
+    </div>
+    {% include bloch.html %}
+  </div>
 </section>
+<script src="{{ '/assets/js/bloch.js' | relative_url }}" defer></script>

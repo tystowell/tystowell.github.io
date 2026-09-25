@@ -17,6 +17,13 @@ author:
   orcid: ""          # ORCID URL (leave empty to hide)
   cv: ""             # e.g. /assets/files/cv.pdf — leave empty to hide the CV button
 
+# Photo on the right of the home page. Delete this block to show the animated Bloch sphere instead.
+hero_photo:
+  src: /assets/img/tyler-portrait.jpg
+  alt: Tyler aligning a fiber to the integrated homodyne QRNG under a microscope
+  caption: Aligning the integrated homodyne QRNG
+  link: /work/homodyne-qrng/
+
 # Short intro on the home page (Markdown allowed)
 intro: >-
   I work on the hardware and theory behind quantum networks: simulators for
@@ -44,7 +51,9 @@ defaults:
   - scope: { path: "", type: projects }
     values: { layout: project }
   - scope: { path: "" }
-    values: { layout: page }
+    values:
+      layout: page
+      image: /assets/img/tyler-portrait.jpg   # preview image when a link to the site is shared
 
 markdown: kramdown
 kramdown:
