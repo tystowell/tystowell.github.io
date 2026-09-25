@@ -33,8 +33,8 @@ solid-state spin–photon interfaces, quantum frequency conversion, and simulati
   deployed at Oak Ridge National Laboratory. Contributed quantum simulation features to CamachoLab's
   [Simphony]({{ '/work/simphony/' | relative_url }}) photonic circuit simulator.
 
-**Engineering Intern**, Harsch Systems — Summer 2021
-: Designed an [RP2040-based industrial I/O board]({{ '/work/rp2040-board/' | relative_url }}) in KiCad and
+**Engineering Intern**, Harsch Systems — 2020 – 2021
+: Wrote a [Linux kernel driver]({{ '/work/pi-plate-kernel-driver/' | relative_url }}) for Pi-Plates expansion boards, then designed an [RP2040-based industrial I/O board]({{ '/work/rp2040-board/' | relative_url }}) in KiCad and
   brought up [embedded Rust firmware]({{ '/work/embedded-rust-rp2040/' | relative_url }}) on the Raspberry Pi Pico.
 
 ## Student teams
