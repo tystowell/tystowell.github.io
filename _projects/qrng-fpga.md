@@ -45,7 +45,20 @@ The system runs on a Basys3 board with a Xilinx **Artix-7** FPGA:
   (seeded through a bootstrap control input), a multiplier and an accumulator compresses the raw samples into random output bits.
 - **Output:** a transmit controller and USB controller stream the results to a host computer through an FT2232 USB chip.
 
-TODO: Output bit rate, and any randomness test suites the output passed (e.g. NIST).
+## Randomness tests
+
+The extracted output passes the full **NIST SP 800-22** statistical test suite. Every test
+returns a p-value above the standard 0.01 threshold, for each of the three measured outputs.
+As a check, the same tests **fail** without the quantum signal, that is, without the local
+oscillator and vacuum measurement. The randomness comes from the quantum measurement, not
+from the electronics.
+
+<figure class="figure-inset">
+  <a href="{{ '/assets/img/projects/toeplitz/nist-results.png' | relative_url }}"><img src="{{ '/assets/img/projects/toeplitz/nist-results.png' | relative_url }}" alt="Table of NIST SP 800-22 test p-values for the X, P and Z outputs, all above 0.01" style="width: min(100%, 300px);"></a>
+  <figcaption>NIST SP 800-22 results for the three outputs (X̂, P̂, Ẑ), including the Random Excursions and Random Excursions Variant tests. Every p-value is above 0.01. Click to enlarge.</figcaption>
+</figure>
+
+TODO: Output bit rate.
 
 ## QRNG theory
 

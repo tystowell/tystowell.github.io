@@ -214,8 +214,15 @@ p { margin: 0 0 1em; }
   mask-image: linear-gradient(to right, transparent 0%, #000 42%), linear-gradient(to top, transparent 0%, #000 22%);
   animation: hero-settle 2.4s cubic-bezier(.2, .7, .2, 1) both;
 }
-.hero-cinematic .hero-inner { display: block; }
+.hero-cinematic .hero-inner { display: block; max-width: calc(var(--container) + 192px); } /* text sits ~1in further left than the page container */
 .hero-cinematic .hero-text { max-width: 580px; }
+
+/* Hero type rhythm: tight label -> name, then steadily larger steps down the column */
+.hero-text .eyebrow { margin-bottom: 14px; }
+.hero-text .hero-title { line-height: 1.02; margin-bottom: 18px; }
+.hero-text .hero-tagline { line-height: 1.35; margin-bottom: 26px; text-wrap: balance; }
+.hero-text .hero-intro p { margin: 0; }
+.hero-text .hero-actions { margin: 30px 0 22px; }
 .hero-cinematic .hero-text > * { animation: hero-rise .9s cubic-bezier(.2, .7, .2, 1) both; }
 .hero-cinematic .hero-text > :nth-child(2) { animation-delay: .08s; }
 .hero-cinematic .hero-text > :nth-child(3) { animation-delay: .16s; }
