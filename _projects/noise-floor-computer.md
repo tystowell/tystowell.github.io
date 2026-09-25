@@ -7,6 +7,7 @@ period: "2021"
 status: Completed
 role: High school capstone project
 tools: [Java, Signal processing, Multithreading]
+thumbnail: /assets/img/projects/noise-floor-computer/card.png
 links:
   - label: Source
     url: https://github.com/tystowell/NoiseFloorComputer
@@ -20,14 +21,14 @@ continuously estimates each signal's noise floor. The signals come from the lens
 **adaptive optics** wavefront sensor, where each lenslet reports how far its spot has shifted.
 
 <figure>
-  <img src="{{ '/assets/img/projects/noise-floor-computer/AdaptiveOpticsExplained.png' | relative_url }}" alt="Three images of solar granulation: blurry with AO-76 off, sharp with AO-76 on, and sharper still with AO-76 plus speckle reconstruction">
+  <img src="{{ '/assets/img/projects/noise-floor-computer/ao-comparison.png' | relative_url }}" alt="Three images of solar granulation: blurry with AO-76 off, sharp with AO-76 on, and sharper still with AO-76 plus speckle reconstruction">
   <figcaption>Why adaptive optics matters: the same patch of the Sun with the AO-76 system off, on, and on with speckle reconstruction. Image credit: W. Cao &amp; N. Gorceix.</figcaption>
 </figure>
 
 ## How it works
 
 <figure class="figure-inset">
-  <img src="{{ '/assets/img/projects/noise-floor-computer/MySystemDiagram.png' | relative_url }}" alt="Flowchart: wavefront sensor lenslet array, subdivide into overlapping segments, constant detrending, Hamming window, discrete Fourier transform, convert to periodogram, compute average, estimate asymptote, integrate and square root, noise floor" style="width: min(100%, 200px);">
+  <img src="{{ '/assets/img/projects/noise-floor-computer/pipeline.png' | relative_url }}" alt="Flowchart: wavefront sensor lenslet array, subdivide into overlapping segments, constant detrending, Hamming window, discrete Fourier transform, convert to periodogram, compute average, estimate asymptote, integrate and square root, noise floor" style="width: min(100%, 200px);">
   <figcaption>The processing pipeline, from raw lenslet shifts to a noise floor estimate.</figcaption>
 </figure>
 
@@ -41,7 +42,7 @@ continuously estimates each signal's noise floor. The signals come from the lens
 
 ## Results
 
-![Top: X shift of one lenslet over 512 samples, fluctuating between about -18 and 34 mm. Bottom: its averaged power spectral density, with a large peak near zero frequency, smaller peaks near 10 and 32, and a flat floor beyond]({{ '/assets/img/projects/noise-floor-computer/MySystemResults.png' | relative_url }})
+![Top: X shift of one lenslet over 512 samples, fluctuating between about -18 and 34 mm. Bottom: its averaged power spectral density, with a large peak near zero frequency, smaller peaks near 10 and 32, and a flat floor beyond]({{ '/assets/img/projects/noise-floor-computer/results.png' | relative_url }})
 *One lenslet's X shift over time (top) and its averaged power spectral estimate (bottom). The energy sits at low frequencies with a few distinct peaks; the flat tail above them is the noise floor the library estimates.*
 
 TODO: What system was this built for, and what did the capstone involve?
