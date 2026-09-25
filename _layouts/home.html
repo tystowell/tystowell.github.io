@@ -2,8 +2,7 @@
 layout: default
 body_class: home
 ---
-<section class="hero">
-  <div class="container hero-inner">
+{%- capture hero_text -%}
     <div class="hero-text">
       <p class="eyebrow mono">{{ site.author.affiliation }}</p>
       <h1 class="hero-title">{{ site.author.name }}</h1>
@@ -16,22 +15,31 @@ body_class: home
       </div>
       {% include social-links.html %}
     </div>
-    <div class="hero-figure">
-      {% if site.hero_photo %}
-      <figure class="hero-photo">
-        <img src="{{ site.hero_photo.src | relative_url }}" alt="{{ site.hero_photo.alt }}" width="1080" height="1080">
-        {% if site.hero_photo.caption %}
-        <figcaption class="mono">
-          {% if site.hero_photo.link %}<a href="{{ site.hero_photo.link | relative_url }}">{{ site.hero_photo.caption }} {% include icon.html name="arrow-right" %}</a>{% else %}{{ site.hero_photo.caption }}{% endif %}
-        </figcaption>
-        {% endif %}
-      </figure>
-      {% else %}
-      {% include bloch.html %}
-      {% endif %}
-    </div>
+{%- endcapture -%}
+
+{% if site.hero_photo %}
+<section class="hero hero-cinematic">
+  <div class="hero-media">
+    <img src="{{ site.hero_photo.src | relative_url }}" alt="{{ site.hero_photo.alt }}" width="1080" height="1080" fetchpriority="high">
+  </div>
+  <div class="container hero-inner">
+    {{ hero_text }}
+  </div>
+  {% if site.hero_photo.bloch %}<div class="hero-bloch" aria-hidden="true">{% include bloch.html %}</div>{% endif %}
+  {% if site.hero_photo.caption %}
+  <p class="hero-caption mono">
+    {% if site.hero_photo.link %}<a href="{{ site.hero_photo.link | relative_url }}">{{ site.hero_photo.caption }} {% include icon.html name="arrow-right" %}</a>{% else %}{{ site.hero_photo.caption }}{% endif %}
+  </p>
+  {% endif %}
+</section>
+{% else %}
+<section class="hero">
+  <div class="container hero-inner">
+    {{ hero_text }}
+    <div class="hero-figure">{% include bloch.html %}</div>
   </div>
 </section>
+{% endif %}
 
 {% assign featured = site.projects | where: "featured", true | sort: "date" | reverse %}
 {% if featured.size > 0 %}
@@ -77,4 +85,4 @@ body_class: home
 
 {{ content }}
 
-{% unless site.hero_photo %}<script src="{{ '/assets/js/bloch.js' | relative_url }}" defer></script>{% endunless %}
+{% if site.hero_photo == nil or site.hero_photo.bloch %}<script src="{{ '/assets/js/bloch.js' | relative_url }}" defer></script>{% endif %}

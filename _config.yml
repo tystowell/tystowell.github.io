@@ -17,8 +17,10 @@ author:
   orcid: ""          # ORCID URL (leave empty to hide)
   cv: ""             # e.g. /assets/files/cv.pdf — leave empty to hide the CV button
 
-# Photo on the right of the home page. Delete this block to show the animated Bloch sphere instead.
+# Full-height photo on the home page. Delete this block to show only the animated Bloch sphere instead.
+# `bloch: true` floats the animated Bloch sphere over the photo's fade.
 hero_photo:
+  bloch: true
   src: /assets/img/tyler-portrait.jpg
   alt: Tyler aligning a fiber to the integrated homodyne QRNG under a microscope
   caption: Aligning the integrated homodyne QRNG
