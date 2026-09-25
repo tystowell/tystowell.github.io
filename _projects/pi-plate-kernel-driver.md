@@ -7,7 +7,10 @@ period: "2020"
 status: Completed
 role: Engineering Intern, Harsch Systems
 tools: [C, Linux kernel, SPI, GPIO]
-# thumbnail / hero: add your own photo of a Pi with a plate attached
+thumbnail: /assets/img/projects/pi-plate-kernel-driver/card.jpg
+hero: /assets/img/projects/pi-plate-kernel-driver/pi-and-plates.jpg
+hero_alt: A Raspberry Pi surrounded by three green Pi-Plates expansion boards, laid out on a white countertop
+hero_caption: "A Raspberry Pi (center) with three Pi-Plates expansion boards, including a DAQCplate (top right). The plates stack on the Pi's 40-pin header."
 links:
   - label: Kernel driver
     url: https://github.com/Harsch-Systems/pi-plate-module
