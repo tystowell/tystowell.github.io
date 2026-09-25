@@ -3,16 +3,17 @@ title: "Simphony: Quantum Simulation of Photonic Circuits"
 summary: Contributed to Simphony, BYU CamachoLab's open-source photonic integrated circuit simulator, focusing on its quantum simulation side, including extending it beyond Gaussian states to cat states.
 category: simulation
 date: 2024-10-01
-period: 2024 – 2025          # TODO: confirm
+period: Oct – Nov 2024
 status: Published
 role: Contributor, quantum simulation
 collaborators: BYU CamachoLab
 tools: [Python, JAX, Continuous-variable quantum optics]
 math: true
-# thumbnail: /assets/img/projects/simphony-thumb.png
-# hero: /assets/img/projects/simphony-wigner.png
-# hero_caption: "Wigner function of a cat state propagated through a simulated circuit."
+thumbnail: /assets/img/projects/simphony/simphony-card.png
 links:
+  - label: My branch (quantum-interference)
+    url: https://github.com/BYUCamachoLab/simphony/tree/quantum-interference
+    icon: github
   - label: Simphony on GitHub
     url: https://github.com/BYUCamachoLab/simphony
     icon: github
@@ -51,4 +52,25 @@ written as a weighted sum of Gaussian terms (including complex cross terms), eac
 propagated through the circuit with the existing Gaussian machinery, and the results are
 recombined.
 
-TODO: What you got working, and a figure (for example, a cat state's Wigner function before and after a lossy circuit).
+<div class="figure-row">
+  <figure>
+    <img src="{{ '/assets/img/projects/simphony/cat-wigner.png' | relative_url }}" alt="3D surface plot of a cat state's Wigner function, with two Gaussian peaks and negative interference fringes between them">
+    <figcaption>Wigner function of a simulated cat state: two coherent-state peaks, with negative-valued interference fringes between them.</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/assets/img/projects/simphony/cat-homodyne.gif' | relative_url }}" alt="Animation of a cat state's homodyne measurement distribution as the measurement phase rotates" loading="lazy">
+    <figcaption>Simulated homodyne measurement as the local-oscillator phase rotates: two separated peaks along one quadrature, and interference fringes along the other.</figcaption>
+  </figure>
+</div>
+
+## What I added
+
+All of this lives on the [`quantum-interference` branch](https://github.com/BYUCamachoLab/simphony/tree/quantum-interference)
+([my commits](https://github.com/BYUCamachoLab/simphony/commits/quantum-interference?author=tystowell)):
+
+- **Density matrices** for representing quantum states.
+- **Arbitrary sums of coherent states**, the building block for cat states.
+- **Squeezed-state interference.**
+- **Multimode states** and their evolution through circuits.
+- **Homodyne detection**, simulating measurement of a chosen quadrature.
+- **Phase corrections** for the cross terms between Gaussian components.
