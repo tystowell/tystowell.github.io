@@ -1,6 +1,6 @@
 ---
 title: Lunar Lander
-summary: A lunar lander game and physics simulation written from scratch in HTML, CSS and JavaScript. Playable right on this page.
+summary: A lunar lander game that I wrote from scratch in HTML, CSS, and Java.
 category: games
 date: 2018-04-04
 period: "2018"
@@ -21,8 +21,4 @@ links:
 
 ## About the game
 
-Land the craft gently on the terrain using the arrow keys, fighting gravity with the thruster
-while dodging meteors. Everything (physics, terrain, collision detection, the UI) is drawn by
-hand on an HTML canvas with no game engine or libraries.
-
-TODO: Add a sentence or two on what you learned, or what you'd add next.
+I did this project because I wanted to be capable of doing web design, and I wanted to make my own physics simualtor. I loved both elements of this. While the game is a little rough around the edges, learning how to generate random terrain and write my own collider so that the rover would be able to land were difficult challenges, and I learned a lot.
