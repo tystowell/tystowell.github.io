@@ -1,7 +1,7 @@
 ---
 title: Quantum Frequency Conversion System
 summary: Designed and built a free-space quantum frequency conversion setup that shifts 737 nm light to the 1283 nm telecom O-band in a PPLN waveguide, reaching ~70% internal conversion efficiency.
-category: experiment
+category: photonics
 date: 2026-05-01
 period: May – Aug 2026
 status: Completed

@@ -5,7 +5,7 @@
 
 title: Project Title
 summary: One sentence shown on cards and under the title.
-category: simulation        # simulation | experiment | embedded | ml | software | games (see _data/categories.yml)
+category: simulation        # simulation | photonics | embedded | teams | coursework | ml | software | games (see _data/categories.yml)
 date: 2026-01-01            # start date; every list on the site is sorted by this, newest first
 period: 2025 – present      # shown instead of the date if set
 status: Ongoing             # free text: Ongoing, Completed, Published, Playable…

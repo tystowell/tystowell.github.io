@@ -5,7 +5,7 @@
 # Within a category, projects are always sorted by date, newest first.
 
 - id: simulation
-  label: Theory & Simulation
+  label: Quantum Simulation
   group: Research
   hue: "#5b5bd6"
   blurb: Numerical models of quantum devices and networks.
@@ -14,13 +14,7 @@
   label: Integrated Photonics
   group: Research
   hue: "#c2417a"
-  blurb: Photonic chips for quantum key distribution and randomness generation.
-
-- id: experiment
-  label: Experimental
-  group: Research
-  hue: "#d4462e"
-  blurb: Free-space optics and lab systems.
+  blurb: Photonic chips and waveguides for QKD, random number generation and frequency conversion.
 
 - id: embedded
   label: Embedded & Hardware
