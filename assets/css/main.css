@@ -5,6 +5,7 @@
    ========================================================================== */
 
 :root {
+  --container-wide: calc(var(--container) + 192px); /* header + home hero: ~1in wider on each side than page content */
   --bg: #f6f4ef;
   --bg-alt: #efece4;
   --surface: #fffefb;
@@ -114,7 +115,7 @@ p { margin: 0 0 1em; }
   -webkit-backdrop-filter: saturate(1.4) blur(12px);
   border-bottom: 1px solid var(--line);
 }
-.header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+.header-inner { max-width: var(--container-wide); display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600; letter-spacing: -.01em; }
 .brand-mark { font-family: var(--font-mono); font-weight: 500; font-size: .85rem; color: var(--accent); border: 1px solid var(--line-strong); border-radius: 6px; padding: 2px 6px; }
 .site-nav { display: flex; align-items: center; gap: 4px; }
@@ -214,7 +215,7 @@ p { margin: 0 0 1em; }
   mask-image: linear-gradient(to right, transparent 0%, #000 42%), linear-gradient(to top, transparent 0%, #000 22%);
   animation: hero-settle 2.4s cubic-bezier(.2, .7, .2, 1) both;
 }
-.hero-cinematic .hero-inner { display: block; max-width: calc(var(--container) + 192px); } /* text sits ~1in further left than the page container */
+.hero-cinematic .hero-inner { display: block; max-width: var(--container-wide); }
 .hero-cinematic .hero-text { max-width: 580px; }
 
 /* Hero type rhythm: tight label -> name, then steadily larger steps down the column */
