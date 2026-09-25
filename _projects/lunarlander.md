@@ -9,7 +9,7 @@ tools: [JavaScript, HTML Canvas, CSS]
 embed: https://tystowell.github.io/lunarlander/
 embed_size: [1140, 610]     # native width/height of the game page; it's scaled to fit
 embed_note: Click the game first so it picks up your keyboard.
-# thumbnail: /assets/img/projects/lunarlander-thumb.png
+thumbnail: /assets/img/projects/lunarlander/LunarLanderMain.png
 links:
   - label: Play full screen
     url: https://tystowell.github.io/lunarlander/
