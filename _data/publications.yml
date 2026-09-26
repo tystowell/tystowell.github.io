@@ -14,9 +14,9 @@
   type: poster
   url: ""
 
-- title: "TODO: Title of the Simphony paper"
-  authors: "TODO: author list (…, T. Stowell, …)"
-  venue: "TODO: Journal"
-  year: 2025   # TODO: confirm
+- title: "Device-Aware Quantum Photonic Simulator for Gaussian States"
+  authors: "C. Carver, A. Probst, B. Arnesen, B. Fisher, T. Stowell, R. M. Camacho"
+  venue: "Frontiers in Optics + Laser Science 2022, JTu4A.32"
+  year: 2022
   type: paper
-  url: ""
+  url: "https://opg.optica.org/abstract.cfm?uri=fio-2022-JTu4A.32"

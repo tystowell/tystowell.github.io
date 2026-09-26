@@ -1,9 +1,9 @@
 ---
 title: "Simphony: Quantum Simulation of Photonic Circuits"
-summary: Contributed to Simphony, BYU CamachoLab's open-source photonic integrated circuit simulator, focusing on its quantum simulation side, including extending it beyond Gaussian states to cat states.
+summary: I contributed to Simphony, BYU CamachoLab's open-source photonic integrated circuit simulator. I did work mostly on the quantum simulation side, including implementing density matrices and sum of gaussian state capabilities.
 category: simulation
 date: 2024-10-01
-period: Oct – Nov 2024
+period: "2024"
 status: Published
 role: Contributor, quantum simulation
 collaborators: BYU CamachoLab
@@ -20,57 +20,47 @@ links:
   - label: Documentation
     url: https://simphonyphotonics.rtfd.io
     icon: external
-  # - label: Paper
-  #   url: TODO
-  #   icon: file
+  - label: Paper (FiO + LS 2022)
+    url: https://opg.optica.org/abstract.cfm?uri=fio-2022-JTu4A.32
+    icon: file
 ---
 
 ## Overview
 
-[Simphony](https://github.com/BYUCamachoLab/simphony) is an open-source simulator for photonic
-integrated circuits developed by BYU's CamachoLab. Alongside classical circuit simulation, it can
-propagate **quantum states of light** through a circuit, which lets a designer see how squeezing,
-entanglement and loss evolve across a chip. My work focused on this quantum simulation side, and
-I'm a co-author on one of the later papers about the toolkit.
+[Simphony](https://github.com/BYUCamachoLab/simphony) is an open-source simulator for photonic integrated circuits developed by BYU's CamachoLab. One of it's main appeals is the ability to propogate quantum gaussian states through classical circuit descriptions generated through Lumerical FDTD.
+
+Up to this point, my previous research projects in my lab had dealt with the classical components of our systems, like noise and entropy extraction or FPGA control. This was my first project in which I had to learn and understand the quantum nature of light at a deeper level.
 
 ## Beyond Gaussian states
 
-Simphony represents quantum states as **Gaussian states**: coherent, squeezed, two-mode squeezed
-and thermal states, each described by a mean vector and a covariance matrix. Linear optical
-circuits map Gaussian states to Gaussian states, so this is efficient, but it can't capture
-non-Gaussian resources like **cat states**,
+Simphony represents quantum states as Gaussian states, with a vector of means and covariance. This can simulate coherent, squeezed, two-mode squeezed vacuum, and thermal states, but cannot represent states like single photons. The benefit of this tradeoff is that it's very fast.
+
+After working with other gaussian state simulators like [Strawberry Fields](https://strawberryfields.ai/), I learned that there was also a way to ise the gaussian formulism to simulate sums of gaussian states, like the cat state:
 
 $$
 |\text{cat}_\pm\rangle \propto |\alpha\rangle \pm |{-\alpha}\rangle ,
 $$
 
-which matter for continuous-variable quantum computing and error correction.
-
-I worked on integrating cat states and other **sums of Gaussian states** into the simulator,
-using an approach similar to [Strawberry Fields](https://strawberryfields.ai/). The state is
-written as a weighted sum of Gaussian terms (including complex cross terms), each term is
-propagated through the circuit with the existing Gaussian machinery, and the results are
-recombined.
+My work involved two parts. First, I added density matrix functionality to simphony's preexisting engine. Then, I worked on integrating sums of Gaussian states (like cat states), which are represented as the sum of Gaussian terms and complex cross terms. After propogating each term through the circuit, the Wigner distribution can be extracted.
 
 <div class="figure-row">
   <figure>
     <img src="{{ '/assets/img/projects/simphony/cat-wigner.png' | relative_url }}" alt="3D surface plot of a cat state's Wigner function, with two Gaussian peaks and negative interference fringes between them">
-    <figcaption>Wigner function of a simulated cat state: two coherent-state peaks, with negative-valued interference fringes between them.</figcaption>
+    <figcaption>Wigner function of a simulated cat state: two coherent-state peaks, with negative-valued interference fringes between them. This is done purely in a gaussian state basis.</figcaption>
   </figure>
   <figure>
     <img src="{{ '/assets/img/projects/simphony/cat-homodyne.gif' | relative_url }}" alt="Animation of a cat state's homodyne measurement distribution as the measurement phase rotates" loading="lazy">
-    <figcaption>Simulated homodyne measurement as the local-oscillator phase rotates: two separated peaks along one quadrature, and interference fringes along the other.</figcaption>
+    <figcaption>Simulated homodyne measurement as the local-oscillator phase rotates, showing the interference fringes of the two cat states.</figcaption>
   </figure>
 </div>
 
-## What I added
+## Results
 
-All of this lives on the [`quantum-interference` branch](https://github.com/BYUCamachoLab/simphony/tree/quantum-interference)
-([my commits](https://github.com/BYUCamachoLab/simphony/commits/quantum-interference?author=tystowell)):
+All of this lives on the [`quantum-interference` branch](https://github.com/BYUCamachoLab/simphony/tree/quantum-interference). This project was significant because it was the first time I had to dive deep into the quantum theory of light. I understood how density matrices and the quantum harmonic oscillator worked at a deeper level, and felt more comfortable going out on my own.
 
-- **Density matrices** for representing quantum states.
-- **Arbitrary sums of coherent states**, the building block for cat states.
-- **Squeezed-state interference.**
-- **Multimode states** and their evolution through circuits.
-- **Homodyne detection**, simulating measurement of a chosen quadrature.
-- **Phase corrections** for the cross terms between Gaussian components.
+## Publication
+(Note - this is from earlier work I did on the initial quantum simulation capabilities of simphony)
+
+C. Carver, A. Probst, B. Arnesen, B. Fisher, **T. Stowell** and R. M. Camacho,
+["Device-Aware Quantum Photonic Simulator for Gaussian States,"](https://opg.optica.org/abstract.cfm?uri=fio-2022-JTu4A.32)
+*Frontiers in Optics + Laser Science 2022*, paper JTu4A.32 (Optica Publishing Group, 2022).
