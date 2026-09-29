@@ -22,12 +22,12 @@ links:
 
 ## The problem
 
-I worked under Mike Harsch at Harsch Systems for an internship that spanned most of the COVID era. He built industrial control systems that relied on a [raspberry pi plate add-on board](https://pi-plates.com/). Communication to these happened over the standard Python RPi.GPIO library. That normally works, but under heavier loads the library would force frequent, expensive context switches, which would sometimes cause it to miss strict timing requirements. My task was to move all of the I/O and the Pi-Plate protocol into the kernel, where the timing could be controlled.
+I worked under Mike Harsch at Harsch Systems for an internship that spanned most of the COVID era. He built industrial control systems that relied on [Pi-Plates add-on boards](https://pi-plates.com/) for the Raspberry Pi. Communication with these happened over the standard Python `RPi.GPIO` library. That normally works, but under heavier loads the library would force frequent, expensive context switches, which would sometimes cause it to miss strict timing requirements. My task was to move all of the I/O and the Pi-Plate protocol into the kernel, where the timing could be controlled.
 
 I had never worked in kernel space, so this was a big learning experience for me. I relied heavily on the book *Linux Device Drivers* to learn how these things worked.
 
-The finished module ([pi-plate-module](https://github.com/Harsch-Systems/pi-plate-module)) talks to the plates over SPI, manages acknowledge and interrupt GPIO lines, detects timing violations, exposes a device in the standard /dev folder, and was far more reliable than the previous implementation. It supports all the pi-plate devices, including newer ones that used slightly different timings and protocols.
+The finished module ([pi-plate-module](https://github.com/Harsch-Systems/pi-plate-module)) talks to the plates over SPI, manages acknowledge and interrupt GPIO lines, detects timing violations, exposes a device in the standard `/dev` folder, and was far more reliable than the previous implementation. It supports all the Pi-Plate devices, including newer ones that used slightly different timings and protocols.
 
 ## The C library
 
-On top of the driver I wrote [pi-plate-io](https://github.com/Harsch-Systems/pi-plate-io), a user-space C library that wraps these kernel space commands to the pi-plates. These can read inputs and temperatures, drive relays and stepper motors, generate waveforms, and capturing oscilloscope style traces.
+On top of the driver I wrote [pi-plate-io](https://github.com/Harsch-Systems/pi-plate-io), a user-space C library that wraps these kernel-space commands to the Pi-Plates. These can read inputs and temperatures, drive relays and stepper motors, generate waveforms, and capture oscilloscope-style traces.

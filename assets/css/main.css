@@ -367,6 +367,7 @@ p { margin: 0 0 1em; }
 .prose .figure-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px; align-items: start; margin: 2em 0; }
 .prose .figure-row figure { margin: 0; }
 .prose .figure-row img { margin: 0; width: 100%; }
+.prose .figure-row + .figure-caption { margin-top: -1.4em; font-size: .85rem; color: var(--muted); }
 /* Small figure with the caption beside it (for low-resolution images): <figure class="figure-inset">…</figure> */
 .prose .figure-inset { display: flex; align-items: center; gap: 20px; margin: 2em 0; }
 .prose .figure-inset img { margin: 0; width: min(100%, 420px); flex: none; }
@@ -374,6 +375,15 @@ p { margin: 0 0 1em; }
 .prose video { display: block; max-width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--line); background: #000; }
 .prose .figure-inset video { width: min(100%, 280px); flex: none; }
 @media (max-width: 640px) { .prose .figure-inset { flex-direction: column; align-items: flex-start; } }
+/* Tall figure floated right so the surrounding paragraphs wrap around it:
+   <figure class="figure-float">…</figure>, placed *before* the text it sits beside. */
+.prose::after { content: ""; display: block; clear: both; } /* keep floats inside the article */
+.prose .figure-float { float: right; width: min(42%, 280px); margin: .3em 0 1.2em 28px; }
+.prose .figure-float img, .prose .figure-float video { margin: 0; width: 100%; }
+.prose .figure-float figcaption { margin-top: .5em; }
+.prose h2, .prose h3, .prose .figure-row, .prose pre, .prose table,
+.prose p:has(> img), .prose p:has(> a > img), .prose .clear { clear: both; }
+@media (max-width: 640px) { .prose .figure-float { float: none; width: min(100%, 320px); margin: 1.5em 0; } }
 .prose figcaption, .project-hero figcaption, .embed figcaption { font-size: .85rem; color: var(--muted); margin-top: .6em; }
 .prose blockquote { margin: 1.5em 0; padding: .2em 0 .2em 1.2em; border-left: 3px solid var(--hue); font-family: var(--font-serif); font-size: 1.15rem; font-style: italic; }
 .prose code { font: .86em var(--font-mono); background: var(--bg-alt); border: 1px solid var(--line); padding: .1em .35em; border-radius: 5px; }

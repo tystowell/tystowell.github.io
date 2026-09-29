@@ -25,14 +25,14 @@ links:
 
 This was one of my first two projects in BYU's CamachoLab, along with some FPGA work I did that tied into the same project.
 
-In the project I was moving into, the team had been working on doing homodyne detection of the vacuum state with record high signal to noise ratios. This project co-designed a photonic chip and on-chip transimpedance amplifiers to reach that regime, and then turned the detector into a working quantum random number generator.
+In the project I was moving into, the team had been working on doing homodyne detection of the vacuum state with record-high signal-to-noise ratios. This project co-designed a photonic chip and on-chip transimpedance amplifiers to reach that regime, and then turned the detector into a working quantum random number generator.
 
 ## The Pre-existing System
 
 When I arrived, two pieces of the system were in development and about to arrive:
 
 - Photonic integrated circuit (PIC): the local oscillator and the vacuum input are combined in a multimode interference (MMI) coupler and split into four arms, each with a Mach–Zehnder modulator (MZM) and a photodiode. We were just about to receive this when I arrived.
-- Transimpedance amplifiers (TIAs): pairs of on-chip photodiodes feed two custom TIAs which amplify the signal prior to measurement
+- Transimpedance amplifiers (TIAs): pairs of on-chip photodiodes feed two custom TIAs which amplify the signal prior to measurement.
 
 I had a few tasks. First of all, I was supposed to learn how to wirebond chips in BYU's cleanroom so that I was prepared to wirebond our PICs when they arrived. Secondly, I was to work on the edge coupling setup that another student of ours had started so that we were ready to characterize the chip when it arrived. Finally, since I had some significant experience in PCB design, I was working with another student to design a secondary amplification stage on a PCB that would host the chip upon arrival (shown below).
 
@@ -56,8 +56,8 @@ We were able to fabricate the PCB and finish the edge coupling stage. When the c
   </figure>
 </div>
 
-In the end, we had a working system, complete with detection, amplification, and even classical postprocessing, ready for deployment at Oak Ridge National Laboratory, who had worked with us during the development of this so it could be used on their QKD system.
+In the end, we had a working system, complete with detection, amplification, and even classical postprocessing, ready for deployment at Oak Ridge National Laboratory, which had worked with us during development so the system could be used on their QKD network.
 
 ## Deployment at Oak Ridge National Laboratory
 
-For a few months, I worked on site at ORNL. Here, I worked in a team of 3 from BYU to setup the same edge coupling system and the postprocessing that we had been working on during the last year. It was a great opportunity to deploy and use a real product, and a fantastic end to this project.
+For a few months, I worked on site at ORNL. Here, I worked in a team of three from BYU to set up the same edge coupling system and the postprocessing that we had been working on during the last year. It was a great opportunity to deploy and use a real product, and a fantastic end to this project.

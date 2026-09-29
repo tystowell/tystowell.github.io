@@ -1,9 +1,9 @@
 ---
 title: Graphical Simulator for Cavity-Coupled Color Centers
-summary: Quiver, a full-physics, graphical simulator for group-IV color-center quantum memories in optical cavities, covering spin control, photon interactions and realistic noise. It reproduces results from leading experimental groups.
+summary: I took on the challenge of building a full stack simulator for cavity coupled Group IV quantum memory devices. It works well and replicates experimental results.
 category: simulation
 date: 2026-01-01
-period: Jan 2026 – present
+period: "2026"
 status: Paper in preparation
 featured: true
 role: Lead developer

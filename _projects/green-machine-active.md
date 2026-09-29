@@ -1,9 +1,9 @@
 ---
 title: Active Green Machine Chip Design
-summary: Design of the next-generation, actively controlled green machine chip. I designed the couplers and crossover waveguides used on the final layout.
+summary: An ongoing collaboration to design an active, on-chip green machine with researchers from UMD and the University of Arizona.
 category: photonics
 date: 2025-06-01
-period: Summer 2025 – present
+period: "2025"
 status: Ongoing
 role: Photonic component design
 collaborators: University of Arizona, UMD, Tyndall National Institute
@@ -18,15 +18,6 @@ links:
 
 ## Overview
 
-Building on the [passive green machine chip]({{ '/work/green-machine-passive/' | relative_url }}),
-this next-generation chip adds active modulator control. The design is ongoing with
-collaborators at the University of Arizona, UMD and Tyndall National Institute.
+Since my work on the [passive green machine chip]({{ '/work/green-machine-passive/' | relative_url }}), I've been working with the same team on an active version of the chip. I'm more of a collaborator than a primary lead on this project, but I've made some contributions to the team. Specifically, I designed the couplers and crossover waveguides, helped select the electronic integration modules to drive the on-chip modulators, and continue to meet with collaborators to discuss active work on the fabrication and packaging of the photonic integrated circuit.
 
-## My contributions
-
-- **Couplers and crossover waveguides:** I designed these components, and they are on the
-  final version of the chip. The full chip layout was done by a collaborator at the University of Arizona.
-- **Electronics integration:** helped select the electronic integration modules that drive the on-chip modulators.
-- **Ongoing coordination:** regular design meetings with the University of Arizona, UMD and Tyndall teams.
-
-TODO: A render of your coupler or crossover design and its simulated performance.
+Since this work is ongoing, and has recently hit some snags, I don't have much to share here (and can't share everything I have), but it's a great opportunity to work on a team and help take a design from the early concept stage to a packaged module.

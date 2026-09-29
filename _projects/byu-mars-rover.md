@@ -3,7 +3,7 @@ title: "BYU Mars Rover: Science Module Optics"
 summary: On BYU's Mars Rover team, I'm in charge of the optical components of the science module, including the fluorescence detector used to analyze soil samples.
 category: teams
 date: 2026-09-01
-period: 2026 – present
+period: "2026"
 status: Ongoing
 role: Science module, optics lead
 collaborators: BYU Mars Rover team
