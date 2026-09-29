@@ -56,14 +56,25 @@ body_class: home
 </section>
 {% endif %}
 
-<section class="section section-alt">
+{% include ordered-projects.html %}
+<section class="section section-alt" aria-labelledby="all-work-title">
   <div class="container">
-    <header class="section-header">
-      <p class="eyebrow mono">02 — Everything</p>
-      <h2>Index of work</h2>
-      <p class="muted">Every project, grouped by type. Each one has its own page.</p>
+    <header class="section-header carousel-header">
+      <div>
+        <p class="eyebrow mono">02 — Everything</p>
+        <h2 id="all-work-title">All work</h2>
+        <p class="muted">Newest to oldest. Pick any project to read more, or <a href="{{ '/work/' | relative_url }}">browse by category</a>.</p>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" type="button" data-carousel-prev aria-label="Newer projects" disabled>{% include icon.html name="arrow-left" %}</button>
+        <button class="carousel-btn" type="button" data-carousel-next aria-label="Older projects">{% include icon.html name="arrow-right" %}</button>
+      </div>
     </header>
-    {% include work-index.html %}
+    <ol class="carousel" data-carousel tabindex="0" aria-label="All projects, newest first">
+      {%- for p in chrono_projects %}
+      <li class="carousel-item">{% include project-card.html project=p %}</li>
+      {%- endfor %}
+    </ol>
   </div>
 </section>
 

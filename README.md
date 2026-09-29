@@ -24,7 +24,7 @@ Personal portfolio site for PhD applications, built with [Jekyll](https://jekyll
 4. Commit and push.
 
 The project then shows up automatically in:
-- the **Index of work** on the home page (grouped by category),
+- the **All work** carousel on the home page (newest first),
 - the filterable grid on **/work/**,
 - the **Jump to…** sidebar and **Newer / Older** links on every project page,
 - **Highlights** on the home page, if you set `featured: true`.

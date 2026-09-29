@@ -31,6 +31,31 @@
     }
     if (scalers.length) { fitEmbeds(); window.addEventListener('resize', fitEmbeds); }
 
+    /* Home-page carousel: arrow buttons move one card; buttons disable at the ends. */
+    document.querySelectorAll('[data-carousel]').forEach(function (track) {
+      var section = track.closest('section');
+      var prev = section.querySelector('[data-carousel-prev]');
+      var next = section.querySelector('[data-carousel-next]');
+      function step() {
+        var item = track.querySelector('.carousel-item');
+        return item ? item.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0) : track.clientWidth;
+      }
+      function update() {
+        var max = track.scrollWidth - track.clientWidth - 2;
+        if (prev) prev.disabled = track.scrollLeft <= 2;
+        if (next) next.disabled = track.scrollLeft >= max;
+      }
+      if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step() }); });
+      if (next) next.addEventListener('click', function () { track.scrollBy({ left: step() }); });
+      track.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { e.preventDefault(); track.scrollBy({ left: step() }); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); track.scrollBy({ left: -step() }); }
+      });
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    });
+
     /* Filters on /work/ — also honours #category in the URL. */
     var chips = document.querySelectorAll('.filters .chip');
     var cards = document.querySelectorAll('[data-filter-target] .card');

@@ -335,6 +335,34 @@ p { margin: 0 0 1em; }
 .work-index-compact .wi-title { font-family: var(--font-sans); font-size: inherit; }
 .work-index-compact a[aria-current="page"] { border-left-color: var(--hue); color: var(--ink); font-weight: 600; }
 
+/* ---------- Work carousel (home) ---------- */
+.carousel-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
+.carousel-controls { display: flex; gap: 10px; flex: none; }
+.carousel-btn {
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; cursor: pointer;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--line-strong);
+  transition: background .15s, color .15s, border-color .15s, opacity .15s;
+}
+.carousel-btn:hover:not(:disabled) { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.carousel-btn:disabled { opacity: .35; cursor: default; }
+.carousel {
+  --gap: 22px; --per-view: 3;
+  list-style: none; margin: 0; padding: 6px 2px 22px;
+  display: grid; grid-auto-flow: column; gap: var(--gap);
+  grid-auto-columns: calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view));
+  overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent;
+}
+.carousel:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: var(--radius); }
+.carousel-item { scroll-snap-align: start; display: flex; }
+.carousel-item .card { width: 100%; }
+.carousel .card-summary { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+@media (max-width: 900px) { .carousel { --per-view: 2; } }
+@media (max-width: 560px) {
+  .carousel { --per-view: 1.15; }
+  .carousel-header { align-items: flex-start; flex-direction: column; }
+}
+
 /* ---------- Generic pages ---------- */
 .page { padding-top: clamp(40px, 7vw, 80px); padding-bottom: clamp(56px, 8vw, 96px); }
 .page-header { margin-bottom: 40px; max-width: 760px; }
