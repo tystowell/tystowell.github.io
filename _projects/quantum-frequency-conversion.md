@@ -1,12 +1,12 @@
 ---
 title: Quantum Frequency Conversion System
-summary: Designed and built a free-space quantum frequency conversion setup that shifts 737 nm light to the 1283 nm telecom O-band in a PPLN waveguide, reaching ~70% internal conversion efficiency.
+summary: Designed and built a free-space quantum frequency conversion setup that shifts 737 nm light to the 1283 nm telecom O-band in a PPLN waveguide, reaching ~75% internal quantum efficiency.
 category: photonics
 date: 2026-05-01
 period: "2026"
 status: Completed
 featured: true
-role: System designer & builder, Center for Quantum Networks (CQN)
+role: Quantum Engineer (Contract), Center for Quantum Networks (CQN)
 collaborators: UMD
 tools: [Nonlinear optics, PPLN waveguides, Optomechanics, CNC machining]
 math: true
@@ -57,7 +57,7 @@ The project was not perfect, but still very successful. Below is the internal co
 
 | Metric | Value |
 |---|---|
-| Internal conversion efficiency | ~70% |
+| Internal quantum efficiency | ~75% |
 | Fiber-to-fiber efficiency | 2.5% |
 
 One of the remaining problematic components when I left was the OAP being used for collection, which was introducing astigmatism and reducing our fiber-to-fiber efficiency significantly. I gave the team some suggestions on what lenses and dichroic mirrors to buy to replace this part, and future work should improve the total system efficiency significantly.

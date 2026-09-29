@@ -3,28 +3,32 @@
 # Keep entries newest first. Markdown and site links work in `detail`.
 
 education:
-  - dates: "2021 – 2027"
-    title: "B.S. in TODO"
+  - dates: "2021 – Apr 2027"
+    title: "B.S. in Electrical Engineering, Minor in Physics"
     org: Brigham Young University
     location: Provo, UT
-    detail: "TODO: advisor, lab, honors, GPA, relevant coursework."
+    detail: "Cumulative GPA: 3.99 / 4.0"
 
 experience:
-  - dates: Summer 2026
-    title: Research Intern
+  - dates: May – Aug 2026
+    title: Quantum Engineer (Contract)
     org: Center for Quantum Networks (CQN), University of Maryland
     location: College Park, MD
-    detail: "Designed and built a [quantum frequency conversion system](/work/quantum-frequency-conversion/) around a PPLN waveguide."
-  - dates: 2022 – present
-    title: Undergraduate Researcher
-    org: "TODO Lab, Brigham Young University"
+    detail: >-
+      Built a [quantum frequency conversion system](/work/quantum-frequency-conversion/) from scratch for
+      silicon vacancy quantum memory experiments, with ~75% internal quantum efficiency, and made a
+      [cavity-coupled color center simulation tool](/work/color-center-memory-simulator/) to prepare for
+      experimental work.
+  - dates: "Sep 2021 – Jun 2022, Jun 2024 – present"
+    title: Research Assistant
+    org: "CamachoLab, Brigham Young University"
     location: Provo, UT
     detail: >-
-      Built a [graphical simulator for cavity-coupled color centers](/work/color-center-memory-simulator/),
-      worked on [green machine photonic chips](/work/green-machine-passive/) for conference QKD (coQREATE),
-      built the [FPGA system](/work/qrng-fpga/) for an [integrated homodyne QRNG](/work/homodyne-qrng/)
-      deployed at Oak Ridge National Laboratory, and contributed quantum simulation features to
-      [Simphony](/work/simphony/).
+      Designed, fabricated and tested [integrated silicon photonics devices](/work/photonic-crystal-rings/) with
+      Nokia, worked on [green machine photonic chips](/work/green-machine-passive/) for conference QKD,
+      built the [FPGA system](/work/qrng-fpga/) and electrical-photonic interfaces for an
+      [integrated homodyne QRNG](/work/homodyne-qrng/) deployed at Oak Ridge National Laboratory, and
+      contributed quantum simulation features to [Simphony](/work/simphony/).
   - dates: 2020 – 2021
     title: Engineering Intern
     org: Harsch Systems
@@ -44,11 +48,13 @@ teams:
     detail: "Built a [rocket designed to reach a target altitude](/work/byu-rocketry/), placing third of around 40 teams."
 
 skills:
+  - label: Photonics & optics
+    items: Lumerical FDTD, GDSFactory, free-space optics design, PIC testing, edge coupling
+  - label: Fabrication
+    items: "Cleanroom processing (fabricated a MOSFET, photodiodes and a diode laser), wirebonding, CNC machining"
   - label: Simulation
-    items: "TODO (Python, NumPy/SciPy, QuTiP, Julia, …)"
-  - label: Experimental
-    items: "TODO (free-space & fiber optics, nonlinear optics, single-photon detection, …)"
+    items: "Open quantum systems, Monte Carlo noise models, continuous-variable quantum optics, QKD key-rate analysis"
   - label: Embedded & hardware
-    items: Rust, RP2040 / Cortex-M, KiCad PCB design
+    items: FPGA (Xilinx Vivado), Rust, RP2040 / Cortex-M, Linux kernel drivers, KiCad PCB design
   - label: Software
-    items: Python, Java, JavaScript, C, TensorFlow, Git
+    items: Python, C, Java, JavaScript, TensorFlow, Git

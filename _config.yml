@@ -15,7 +15,7 @@ author:
   scholar: ""        # Google Scholar profile URL (leave empty to hide)
   linkedin: ""       # LinkedIn profile URL (leave empty to hide)
   orcid: ""          # ORCID URL (leave empty to hide)
-  cv: ""             # e.g. /assets/files/cv.pdf — leave empty to hide the CV button
+  cv: /assets/files/CV.pdf   # leave empty ("") to hide the CV button
 
 # Full-height photo on the home page. Delete this block to show only the animated Bloch sphere instead.
 # `bloch: true` floats the animated Bloch sphere over the photo's fade.

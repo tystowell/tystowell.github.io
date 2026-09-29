@@ -27,7 +27,7 @@ While this circuit has many applications, after a meeting with researchers at UM
 
 ## My contributions
 
-While I met biweekly with collaborators to discuss packaging and characterization, the digital twin was my main contribution. I built a model of the chip's photonic subsystems and the QKD theory around it, including decoy states and finite key effects. I presented a poster on this work at Optica Quantum 2.0.
+While I met biweekly with collaborators to discuss packaging and characterization, the digital twin was my main contribution. I built a model of the chip's photonic subsystems and the QKD theory around it, including decoy states and finite key effects. This work was published as a conference article at Optica Quantum 2.0.
 
 ## Predicted key rates
 

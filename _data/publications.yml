@@ -1,5 +1,5 @@
-# Papers, posters and talks shown on the About page, newest first.
-# type: paper | preprint | poster | talk
+# Papers, conference articles and talks shown on the About page, newest first.
+# type: paper | conference | preprint | poster | talk
 - title: "TODO: Paper on the graphical simulator for cavity-coupled color centers"
   authors: "T. Stowell, et al."
   venue: "In preparation"
@@ -7,11 +7,11 @@
   type: preprint
   url: ""
 
-- title: "TODO: Poster title (passive green machine chip for conference QKD)"
-  authors: "T. Stowell, et al."
+- title: "Quantum Conference Key Agreement Using a Photonic Integrated Circuit Green Machine"
+  authors: "TODO: author list"
   venue: "Optica Quantum 2.0"
   year: 2025   # TODO: confirm
-  type: poster
+  type: conference
   url: ""
 
 - title: "Integrated Differential Conjugate Homodyne Detection for Quantum Random Number Generation"
