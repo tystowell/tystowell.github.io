@@ -1,0 +1,10 @@
+{%- for e in include.entries -%}
+<div class="cv-row">
+  <p class="cv-dates mono">{{ e.dates }}</p>
+  <div class="cv-body">
+    <h3 class="cv-title">{{ e.title }}{% if e.org %}<span class="cv-org"> · {{ e.org }}</span>{% endif %}</h3>
+    {% if e.location %}<p class="cv-meta">{{ e.location }}</p>{% endif %}
+    {% if e.detail %}<div class="cv-detail">{{ e.detail | replace: "](/", "](__BASE__/" | replace: "__BASE__", site.baseurl | markdownify }}</div>{% endif %}
+  </div>
+</div>
+{%- endfor -%}

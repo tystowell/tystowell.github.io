@@ -425,6 +425,32 @@ p { margin: 0 0 1em; }
 .prose dl dd { margin: .2em 0 0; color: var(--muted); }
 .prose mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: .3em 0; }
 
+/* ---------- Résumé (About page) ---------- */
+.cv { max-width: 920px; }
+.cv-header { margin-bottom: 56px; }
+.cv-header .lede { margin-bottom: 1.4em; }
+.cv-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.cv-section { padding: 28px 0 8px; border-top: 1px solid var(--line-strong); }
+.cv-heading { font-size: .75rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0 0 20px; }
+.cv-row { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 24px; padding: 0 0 26px; }
+.cv-row-tight { padding-bottom: 12px; }
+.cv-dates { margin: 0; padding-top: .25em; font-size: .8rem; color: var(--muted); }
+.cv-title { font-family: var(--font-sans); font-size: 1.02rem; font-weight: 600; line-height: 1.4; margin: 0; color: var(--ink); }
+.cv-title a { text-decoration-color: var(--line-strong); }
+.cv-org { font-weight: 400; color: var(--ink-soft); }
+.cv-meta { margin: .2em 0 0; font-size: .92rem; color: var(--muted); }
+.cv-meta strong { color: var(--ink-soft); font-weight: 600; }
+.cv-detail { margin-top: .45em; color: var(--ink-soft); font-size: .97rem; }
+.cv-detail p, .cv-prose p { margin: 0; }
+.cv-detail a, .cv-prose a { color: var(--accent-ink); text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+.cv-prose { color: var(--ink-soft); padding-bottom: 20px; max-width: 70ch; }
+.cv-prose p + p { margin-top: 1em; }
+.cv-skill { margin: 0; color: var(--ink-soft); font-size: .97rem; }
+.cv-tag { font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; margin-left: 6px; font-style: normal; }
+@media (max-width: 640px) {
+  .cv-row { grid-template-columns: 1fr; gap: 4px; }
+}
+
 /* Publications list (About) */
 .pubs { list-style: none; padding: 0 !important; }
 .pubs li { display: grid; grid-template-columns: 5.5em 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); margin: 0; }

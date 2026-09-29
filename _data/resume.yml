@@ -1,0 +1,54 @@
+# Content for the About page (rendered by _layouts/resume.html).
+# Each entry: dates, title, org, optional location, a one-line detail, and optional links.
+# Keep entries newest first. Markdown and site links work in `detail`.
+
+education:
+  - dates: "2021 – 2027"
+    title: "B.S. in TODO"
+    org: Brigham Young University
+    location: Provo, UT
+    detail: "TODO: advisor, lab, honors, GPA, relevant coursework."
+
+experience:
+  - dates: Summer 2026
+    title: Research Intern
+    org: Center for Quantum Networks (CQN), University of Maryland
+    location: College Park, MD
+    detail: "Designed and built a [quantum frequency conversion system](/work/quantum-frequency-conversion/) around a PPLN waveguide."
+  - dates: 2022 – present
+    title: Undergraduate Researcher
+    org: "TODO Lab, Brigham Young University"
+    location: Provo, UT
+    detail: >-
+      Built a [graphical simulator for cavity-coupled color centers](/work/color-center-memory-simulator/),
+      worked on [green machine photonic chips](/work/green-machine-passive/) for conference QKD (coQREATE),
+      built the [FPGA system](/work/qrng-fpga/) for an [integrated homodyne QRNG](/work/homodyne-qrng/)
+      deployed at Oak Ridge National Laboratory, and contributed quantum simulation features to
+      [Simphony](/work/simphony/).
+  - dates: 2020 – 2021
+    title: Engineering Intern
+    org: Harsch Systems
+    detail: >-
+      Wrote a [Linux kernel driver](/work/pi-plate-kernel-driver/) for Pi-Plates expansion boards, designed an
+      [RP2040-based industrial I/O board](/work/rp2040-board/) in KiCad, and brought up
+      [embedded Rust firmware](/work/embedded-rust-rp2040/) on the Raspberry Pi Pico.
+
+teams:
+  - dates: 2026 – present
+    title: Science module, optics
+    org: BYU Mars Rover
+    detail: "Responsible for the optical components, including the [fluorescence detector](/work/byu-mars-rover/)."
+  - dates: "2022"
+    title: New-member competition
+    org: BYU Rocketry
+    detail: "Built a [rocket designed to reach a target altitude](/work/byu-rocketry/), placing third of around 40 teams."
+
+skills:
+  - label: Simulation
+    items: "TODO (Python, NumPy/SciPy, QuTiP, Julia, …)"
+  - label: Experimental
+    items: "TODO (free-space & fiber optics, nonlinear optics, single-photon detection, …)"
+  - label: Embedded & hardware
+    items: Rust, RP2040 / Cortex-M, KiCad PCB design
+  - label: Software
+    items: Python, Java, JavaScript, C, TensorFlow, Git
