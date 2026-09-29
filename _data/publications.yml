@@ -14,6 +14,13 @@
   type: poster
   url: ""
 
+- title: "Integrated Differential Conjugate Homodyne Detection for Quantum Random Number Generation"
+  authors: "C. Carver, J. Marchant, B. Fisher, N. Townsend, T. Stowell, A. Barlow, B. Arnesen, S.-H. W. Chiang, R. M. Camacho"
+  venue: "arXiv:2412.02077"
+  year: 2024
+  type: preprint
+  url: "https://arxiv.org/abs/2412.02077"
+
 - title: "Device-Aware Quantum Photonic Simulator for Gaussian States"
   authors: "C. Carver, A. Probst, B. Arnesen, B. Fisher, T. Stowell, R. M. Camacho"
   venue: "Frontiers in Optics + Laser Science 2022, JTu4A.32"

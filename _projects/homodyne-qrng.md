@@ -1,9 +1,9 @@
 ---
 title: "Integrated Homodyne QRNG: Chip & Deployment"
-summary: Experimental work on a quantum random number generator built from a photonic chip with co-designed on-chip transimpedance amplifiers, from edge-coupling the chip to deploying it at Oak Ridge National Laboratory.
+summary: Experimental work on a quantum random number generator built from a photonic chip with co-designed on-chip transimpedance amplifiers, from wirebonding the chip to deploying it at Oak Ridge National Laboratory.
 category: photonics
 date: 2022-01-01
-period: Jan – Jul 2022
+period: "2022"
 status: Completed
 role: Edge coupling, experimental work & on-site deployment
 collaborators: Oak Ridge National Laboratory
@@ -16,36 +16,34 @@ links:
   - label: FPGA & theory side
     url: /work/qrng-fpga/
     icon: arrow-left
-  # - label: Paper
-  #   url: TODO
-  #   icon: file
+  - label: Paper (arXiv:2412.02077)
+    url: https://arxiv.org/abs/2412.02077
+    icon: file
 ---
 
 ## Overview
 
-Homodyne detection of the vacuum state produces genuinely random measurement results, which
-makes it an excellent source of quantum randomness, but only if the detector is
-quantum-noise-limited. This project co-designed a photonic chip and on-chip transimpedance
-amplifiers to reach that regime, then turned the detector into a working quantum random number
-generator.
+This was one of my first two projects in BYU's CamachoLab, along with some FPGA work I did that tied into the same project.
 
-## The system
+In the project I was moving into, the team had been working on doing homodyne detection of the vacuum state with record high signal to noise ratios. This project co-designed a photonic chip and on-chip transimpedance amplifiers to reach that regime, and then turned the detector into a working quantum random number generator.
 
-- **Photonic integrated circuit (PIC):** the local oscillator and the vacuum input are combined
-  in a multimode interference (MMI) coupler and split into four arms, each with a Mach–Zehnder
-  modulator (MZM) and a photodiode.
-- **Transimpedance amplifiers (TIAs):** pairs of photodiodes feed two custom TIAs, which turn the
-  tiny photocurrent differences into voltages. Those voltages carry the amplified vacuum noise.
-- **Digitization and extraction:** the Basys3 board's ADCs and FPGA turn the signals into certified
-  random bits and send them on to a server.
+## The Pre-existing System
+
+When I arrived, two pieces of the system were in development and about to arrive:
+
+- Photonic integrated circuit (PIC): the local oscillator and the vacuum input are combined in a multimode interference (MMI) coupler and split into four arms, each with a Mach–Zehnder modulator (MZM) and a photodiode. We were just about to receive this when I arrived.
+- Transimpedance amplifiers (TIAs): pairs of on-chip photodiodes feed two custom TIAs which amplify the signal prior to measurement
+
+I had a few tasks. First of all, I was supposed to learn how to wirebond chips in BYU's cleanroom so that I was prepared to wirebond our PICs when they arrived. Secondly, I was to work on the edge coupling setup that another student of ours had started so that we were ready to characterize the chip when it arrived. Finally, since I had some significant experience in PCB design, I was working with another student to design a secondary amplification stage on a PCB that would host the chip upon arrival (shown below).
 
 ![PCB layout of the detector board, with SMA connectors around the edge labeled for supply, bias, reference and output signals, and yellow lines drawn over the layout]({{ '/assets/img/projects/homodyne-qrng/detector-pcb.jpg' | relative_url }})
 *Layout of the detector's circuit board. SMA connectors around the edge bring in the supplies, bias and reference voltages, and carry out the two amplified outputs (VOUT1, VOUT2).*
 
-This page covers the experimental side. The FPGA system and theory, which were my main
-contribution, are on the [QRNG FPGA Control & Randomness Extraction]({{ '/work/qrng-fpga/' | relative_url }}) page.
+This page covers the experimental side. The FPGA system and theory, which were my other main contribution, are on the [QRNG FPGA Control & Randomness Extraction]({{ '/work/qrng-fpga/' | relative_url }}) page.
 
-## Edge coupling & experimental work
+## My work
+
+We were able to fabricate the PCB and finish the edge coupling stage. When the chip arrived, I wirebonded it in the cleanroom and spent many hours in the lab with the microscope working to align the edge couplers.
 
 <div class="figure-row">
   <figure>
@@ -58,10 +56,8 @@ contribution, are on the [QRNG FPGA Control & Randomness Extraction]({{ '/work/q
   </figure>
 </div>
 
-TODO: Coupling light into and out of the photonic chip through its edge facets, what the
-alignment involved, and the measurements you took (for example, showing the detector was
-quantum-noise-limited).
+In the end, we had a working system, complete with detection, amplification, and even classical postprocessing, ready for deployment at Oak Ridge National Laboratory, who had worked with us during the development of this so it could be used on their QKD system.
 
 ## Deployment at Oak Ridge National Laboratory
 
-I worked on site at ORNL to set the system up as the random number source for their QKD system.
+For a few months, I worked on site at ORNL. Here, I worked in a team of 3 from BYU to setup the same edge coupling system and the postprocessing that we had been working on during the last year. It was a great opportunity to deploy and use a real product, and a fantastic end to this project.

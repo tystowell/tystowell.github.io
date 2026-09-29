@@ -35,13 +35,13 @@ Up to this point, my previous research projects in my lab had dealt with the cla
 
 Simphony represents quantum states as Gaussian states, with a vector of means and covariance. This can simulate coherent, squeezed, two-mode squeezed vacuum, and thermal states, but cannot represent states like single photons. The benefit of this tradeoff is that it's very fast.
 
-After working with other gaussian state simulators like [Strawberry Fields](https://strawberryfields.ai/), I learned that there was also a way to ise the gaussian formulism to simulate sums of gaussian states, like the cat state:
+After working with other gaussian state simulators like [Strawberry Fields](https://strawberryfields.ai/), I learned that there was also a way to use the gaussian quantum optics formulism to simulate sums of gaussian states, like the cat state:
 
 $$
 |\text{cat}_\pm\rangle \propto |\alpha\rangle \pm |{-\alpha}\rangle ,
 $$
 
-My work involved two parts. First, I added density matrix functionality to simphony's preexisting engine. Then, I worked on integrating sums of Gaussian states (like cat states), which are represented as the sum of Gaussian terms and complex cross terms. After propogating each term through the circuit, the Wigner distribution can be extracted.
+My work involved two parts. First, I added density matrix functionality to simphony's preexisting engine. Then, I worked on integrating sums of Gaussian states (like cat states), which are represented as four terms in a density matrix - the sum of two standard Gaussian terms and two complex cross terms. After propogating each term through the circuit, the Wigner distribution can be extracted.
 
 <div class="figure-row">
   <figure>

@@ -1,6 +1,6 @@
 ---
 title: Laser Tag System
-summary: Built a working infrared laser tag system from the ground up as the major design project of BYU's electrical engineering junior core, including the optical transmitter and receiver board.
+summary: As part of BYU's electrical engineering junior core, I built a working laser tag system from the ground up, including the optical transmitter and receiver board.
 category: coursework
 date: 2026-01-01
 period: Jan – Apr 2026
@@ -15,18 +15,15 @@ hero_caption: "The finished gun. The circuit boards are visible through the wind
 
 ## Overview
 
-The major design project of BYU's electrical engineering junior core: a complete laser tag
-system built from the ground up, with each player's gun and receiver sending and detecting
-infrared hits.
+This project is a little bit different, because unlike most of the other projects I chose to highlight here, I did this one as part of a class at BYU. I mostly tried to avoid including class projects on this website, but a couple of projects in particular were too cool to ignore. This was the big junior core project at BYU, where all electrical and computer engineers have to built their own laser tag unit.
 
 ## Optical front end
 
-The gun's optics board both fires and detects shots:
+This project was done in a team of 2, and I was able to team with a good friend of mine. The first part of the project was to design an optical transceiver board with the highest signal to noise ratio possible. We managed to scrape by in the top 10% of the class, so we were very happy with our design and build.
 
-- **Transmitter:** the `TX` signal switches an LED through a VN2106 MOSFET to send the shot.
-- **Receiver:** a BPW34 photodiode picks up incoming light. Two MCP6002 op-amp filter and
-  amplifier stages clean up and boost its signal before it goes out on `RX`.
-- **Supply filtering:** a filtered voltage network provides clean supply rails for the analog stages.
+- Transmitter: An LED with PWM control to transmit on different channels, representing different teams.
+- Receiver: A photodiode picks up incident light and amplifies the signal. One of the hardest challenges was isolating LED noise on the power supply from this amplifier.
+- Supply filtering: The filter on the op amp supply had to be good enough that we wouldn't rail anytime the LED was fired.
 
 <div class="figure-row">
   <figure>
@@ -39,7 +36,9 @@ The gun's optics board both fires and detects shots:
   </figure>
 </div>
 
-## Results
+## The Unit
+
+The second part of the project was working on the laser unit, including embedded programming and finite impulse response filters. We also had to code all of the game logic to interface with other units made by other teams.
 
 <div class="figure-row">
   <figure>
@@ -48,11 +47,10 @@ The gun's optics board both fires and detects shots:
   </figure>
   <figure>
     <img src="{{ '/assets/img/projects/laser-tag/scope-shot.png' | relative_url }}" alt="Oscilloscope capture of a received shot, with the time-domain signal in yellow and its FFT in pink">
-    <figcaption>A shot received from across the room: the received signal (yellow) and its FFT (pink), which shows distinct frequency peaks.</figcaption>
+    <figcaption>Here, we show the oscilloscope capture of a signal sent by one gun and received at a distance of around 30 feet.</figcaption>
   </figure>
 </div>
 
-## My contributions
+## Results
 
-TODO: Confirm your part (for example, designing the optics board with a partner), and add
-anything else you built: firmware, hit detection, game logic.
+The main reason I enjoyed this project was that it was an opportunity to work on an embedded system and bring it together into a final project. And I think it was just super cool too! If I learned anything, it's how I would design PCBs, 3d printed cases and power management to build an actual product that I would sell to people. And, of course, I had some practice playing laser tag when it was all done haha.

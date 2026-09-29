@@ -15,7 +15,7 @@ thumbnail: /assets/img/projects/quantum-frequency-conversion/setup.jpg
 
 ## Overview
 
-Early in 2026, I had started work on a versatile simulation structure for cavity coupled Group-IV vacancies in diamond. As part of this, I started meeting with researchers in the Center for Quantum Networks (CQN) at UMD who were trying to build a quantum memory based on this architecture. That collaboration led to an opportunity for a 3 month contracted position in their lab, and this is the work that came out of that summer.
+Early in 2026, I had started work on a versatile simulation structure for cavity coupled Group-IV vacancies in diamond. As part of that work, I started meeting with researchers in the Center for Quantum Networks (CQN) at UMD who were trying to build a quantum memory based on this architecture. That collaboration led to an opportunity for a 3 month contracted position in their lab, and this is the work that came out of that summer.
 
 Silicon vacancy centers emit photons at a very specific frequency around 737nm. We were interested in interfacing our SiV memory with photonic qubits from an Ion trap group at UMD that converted their photons to 1283nm. In order to bridge that gap, we need a quantum frequency conversion system that could shift the photon's wavelength while preserving its quantum state. I built that system from scratch using an NTT Innovative Devices on-chip PPLN waveguide.
 
@@ -42,11 +42,9 @@ The waveguide chip and pump laser were selected by my mentor. I designed the res
   </figure>
 </div>
 
-There were a series of design decisions I had to make, including the use of a dichroic mirror to combine the pump and signal, Off-axis parabolic (OAP) mirrors to simultaneously focus the two wavelengths with minimal chromatic abberation, a short pass filter and volumetric bragg grating to filter out pump and noise photons, temperature control, and assorted diagnostic elements, like a beam splitter and lens that allow for microscope imaging of the waveguide facet through the off-axis parabolic mirrors.
+There were a series of design decisions I had to make. I bought Thorlabs temperature controller to stabiilize the phase matched conversion frequency in the PPLN waveguide. I utilized a dichroic mirror to combine the pump and signal as well as two off-axis parabolic (OAP) mirrors to simultaneously focus the two wavelengths with minimal chromatic abberation. I used a short pass filter and volumetric bragg grating to filter out pump and noise photons. To align the system, I included a beam splitter and lens that allow for microscope imaging of the waveguide facet through the off-axis parabolic mirrors. On top of of this, I had to select every lens, fiber, optomechanical mount and alignment tool for the entire system.
 
-It was a difficult project, as the timeline was short. I had three months to design the experiment, place the order (some components took 6 weeks to arrive), build the system, and observe frequency conversion.
-
-Not only that, but problems arose during development and had to be worked around. Alignment through the OAPs was difficult, and an imaging system had to be installed into the setup that let me visualize the astigmatism being introduced to improve waveguide coupling.
+It was a difficult project, and the timeline was short. I had three months to design the experiment, place the order (some components took 6 weeks to arrive), build the system, and observe frequency conversion. Not only that, but problems arose during development and had to be worked around. Alignment through the OAPs was difficult, and an imaging system had to be installed into the setup that let me visualize the astigmatism being introduced to improve waveguide coupling.
 
 <figure class="figure-inset">
   <img src="{{ '/assets/img/projects/quantum-frequency-conversion/waveguide-facet.png' | relative_url }}" alt="Microscope view of the PPLN chip's edge, with light coupled into one waveguide">
@@ -62,7 +60,7 @@ The project was not perfect, but still very successful. Below is the internal co
 | Internal conversion efficiency | ~70% |
 | Fiber-to-fiber efficiency | 2.5% |
 
-One of the remaining problematic components when I left was a OAP being used for collection, which was introducing astigmatism and reducing our fiber to fiber efficiency significantly. I gave the team some suggestions on what lenses and dichroic mirrors to buy to replace this part, and future work should improve the total system efficiency significantly.
+One of the remaining problematic components when I left was the OAP being used for collection, which was introducing astigmatism and reducing our fiber to fiber efficiency significantly. I gave the team some suggestions on what lenses and dichroic mirrors to buy to replace this part, and future work should improve the total system efficiency significantly.
 
 <div class="figure-row">
   <figure>
@@ -75,6 +73,6 @@ One of the remaining problematic components when I left was a OAP being used for
   </figure>
 </div>
 
-I should also add, during this summer I was able to work on a lot more than just this QFC system. I recovered an old pulsed laser (including settting up water cooling and N2 installations and full system alignment), used my knowledge of experiment design and CNC machining to support other experiments, and was able to work on the alignment of the core quantum memory setup a couple of times.
+I should also add, during this summer I was able to work on a lot more than just this QFC system. I recovered an old pulsed laser (including settting up water cooling and N2 installations and full system alignment), used my knowledge of experiment design and CNC machining to support other experiments, and was able to work on the alignment of the core silicon vacancy quantum memory setup a couple of times.
 
 Working at CQN in Maryland was incredible! It's been an impactful period on my research career and I'm very grateful to the team who made it possible.

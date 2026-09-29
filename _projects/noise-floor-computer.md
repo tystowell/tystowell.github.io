@@ -39,3 +39,5 @@ In High School, I was lucky to be connected with Erik Johansson, an engineer wor
 
 ![Top: X shift of one lenslet over 512 samples, fluctuating between about -18 and 34 mm. Bottom: its averaged power spectral density, with a large peak near zero frequency, smaller peaks near 10 and 32, and a flat floor beyond]({{ '/assets/img/projects/noise-floor-computer/results.png' | relative_url }})
 The above figure is an example output from my system, both showing the low frequency atmospheric noise and the high frequency noise floor of the sample. The full system would report this noise floor over time.
+
+I was really proud of this project when I finished it! The interface was clean, and the code was really fast. In restrospect, if I revisited it, I could get the same results in a few days instead of a few months, but some of these early projects in my career really taught me how fascinating engineering could be, and having a strong basis in signal processing allowed me to do better things in the future.
