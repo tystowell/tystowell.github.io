@@ -4,7 +4,7 @@
 title: Tyler Stowell
 tagline: Quantum information science · quantum networks · simulation & experiment
 description: >-
-  Portfolio of research and projects in quantum information science —
+  A portfolio of my research and projects in quantum information science -
   color-center quantum memories, quantum frequency conversion, and more.
 
 author:
@@ -28,11 +28,12 @@ hero_photo:
 
 # Short intro on the home page (Markdown allowed)
 intro: >-
-  I work on the hardware and theory behind quantum networks: simulators for
-  cavity-coupled color-center memories, photonic chips for quantum key
-  distribution and random number generation, and quantum frequency conversion
-  in the lab. I'm applying to PhD programs to keep building them.
-
+  I am a researcher in quantum information science, focusing on the development
+  of quantum devices and networks. I've worked on projects big and small, from
+  cavity-coupled group-IV center simulations to integrated photonics chips for
+  QKD and homodyne detection. Check out this page to see what I've built both
+  in the lab and at home.
+  
 # ─────────────────────────────────────────────────────────────
 #  URL settings
 #  This repo is served at https://tystowell.github.io/TechnicalPortfolio
