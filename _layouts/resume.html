@@ -30,9 +30,12 @@ layout: default
   <section class="cv-section">
     <h2 class="cv-heading mono">Skills</h2>
     {% for s in cv.skills %}
-    <div class="cv-row cv-row-tight">
-      <p class="cv-dates mono">{{ s.label }}</p>
-      <div class="cv-body"><p class="cv-skill">{{ s.items | replace: "](/", "](__BASE__/" | replace: "__BASE__", site.baseurl | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p></div>
+    <div class="cv-row cv-row-skill">
+      <p class="cv-dates mono"></p>
+      <div class="cv-body">
+        <h3 class="cv-title">{{ s.label }}</h3>
+        <ul class="cv-bullets"><li>{{ s.items | replace: "](/", "](__BASE__/" | replace: "__BASE__", site.baseurl | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li></ul>
+      </div>
     </div>
     {% endfor %}
   </section>

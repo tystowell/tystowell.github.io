@@ -10,7 +10,9 @@
 
 - title: "Quantum Conference Key Agreement Using a Photonic Integrated Circuit Green Machine"
   venue: "Conference Article (Optica Quantum 2.0)"
-  url: ""
+  url: "https://opg.optica.org/abstract.cfm?uri=quantum-2025-QW3A.36"
+  authors: "B. Fisher, T. Stowell, J. G. Richardson, D. Saladukha, M. Hall, R. Bernson, I. Frank, S. Guha, P. O'Brien, R. M. Camacho"
+  year: 2025
   bullets:
     - "Characterized a [PIC](/work/green-machine-passive/) capable of super additive measurements of quantum signals"
     - "Built a digital twin and QKD simulations (decoy states, finite-key effects) to compute conference key rates"
