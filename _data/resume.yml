@@ -1,60 +1,69 @@
-# Content for the About page (rendered by _layouts/resume.html).
-# Each entry: dates, title, org, optional location, a one-line detail, and optional links.
-# Keep entries newest first. Markdown and site links work in `detail`.
+# About page content, copied from assets/files/CV.pdf. Keep this in sync with the CV.
+# Entries: dates, org, title, bullets. Markdown links work inside bullets.
 
 education:
-  - dates: "2021 – Apr 2027"
-    title: "B.S. in Electrical Engineering, Minor in Physics"
+  - dates: April 2027
     org: Brigham Young University
-    location: Provo, UT
-    detail: "Cumulative GPA: 3.99 / 4.0"
+    title: Bachelor of Science, Electrical Engineering
+    bullets:
+      - "Minor: Physics"
+      - "Cumulative GPA: 3.99 / 4.0"
 
 experience:
-  - dates: May – Aug 2026
-    title: Quantum Engineer (Contract)
-    org: Center for Quantum Networks (CQN), University of Maryland
-    location: College Park, MD
-    detail: >-
-      Built a [quantum frequency conversion system](/work/quantum-frequency-conversion/) from scratch for
-      silicon vacancy quantum memory experiments, with ~75% internal quantum efficiency, and made a
-      [cavity-coupled color center simulation tool](/work/color-center-memory-simulator/) to prepare for
-      experimental work.
-  - dates: "Sep 2021 – Jun 2022, Jun 2024 – present"
+  - dates: "Sep 2021 – Jun 2022, Jun 2024 – Present"
+    org: CamachoLab
     title: Research Assistant
-    org: "CamachoLab, Brigham Young University"
-    location: Provo, UT
-    detail: >-
-      Designed, fabricated and tested [integrated silicon photonics devices](/work/photonic-crystal-rings/) with
-      Nokia, worked on [green machine photonic chips](/work/green-machine-passive/) for conference QKD,
-      built the [FPGA system](/work/qrng-fpga/) and electrical-photonic interfaces for an
-      [integrated homodyne QRNG](/work/homodyne-qrng/) deployed at Oak Ridge National Laboratory, and
-      contributed quantum simulation features to [Simphony](/work/simphony/).
-  - dates: 2020 – 2021
-    title: Engineering Intern
+    bullets:
+      - "Designed, fabricated, packaged, and tested [integrated silicon photonics devices](/work/photonic-crystal-rings/) in collaboration with employees at Nokia"
+      - "Deployed a [quantum random number generator](/work/homodyne-qrng/) on site at Oak Ridge National Laboratory for a quantum key distribution system"
+      - "Wirebonded photonic chips in BYU’s cleanroom and edge coupled them for characterization"
+      - "Designed couplers and crossover waveguides for an [active green machine PIC](/work/green-machine-active/) with collaborators at the University of Arizona, UMD, and Tyndall National Institute"
+  - dates: "May 2026 – Aug 2026"
+    org: Center for Quantum Networks
+    title: Quantum Engineer (Contract)
+    bullets:
+      - "Built a [quantum frequency conversion system](/work/quantum-frequency-conversion/) from scratch for silicon vacancy quantum memory experiments with ~75% internal quantum efficiency"
+      - "Developed a [cavity-coupled color center simulator](/work/color-center-memory-simulator/) that reproduces published experimental results to prepare for experimental work on a system ordered from IonQ (manuscript in preparation)"
+      - "Restored a pulsed laser system (water cooling, N2 purge, alignment) and supported alignment of the silicon vacancy quantum memory setup"
+  - dates: "June 2020 – Aug 2021"
     org: Harsch Systems
-    detail: >-
-      Wrote a [Linux kernel driver](/work/pi-plate-kernel-driver/) for Pi-Plates expansion boards, designed an
-      [RP2040-based industrial I/O board](/work/rp2040-board/) in KiCad, and brought up
-      [embedded Rust firmware](/work/embedded-rust-rp2040/) on the Raspberry Pi Pico.
+    title: Design Engineer
+    bullets:
+      - "Designed two generations of an [RP2040-based PCB](/work/rp2040-board/) for industrial control of 4–20 mA and 0–10 V inputs and outputs"
+      - "Wrote a [Linux kernel driver](/work/pi-plate-kernel-driver/) so Raspberry Pis could meet strict SPI timing requirements for industrial I/O applications under heavy load"
+      - "Brought up [embedded Rust](/work/embedded-rust-rp2040/) on the then-unsupported RP2040, writing register level GPIO, ADC, and PWM test programs"
 
-teams:
-  - dates: 2026 – present
-    title: Science module, optics
-    org: BYU Mars Rover
-    detail: "Responsible for the optical components, including the [fluorescence detector](/work/byu-mars-rover/)."
-  - dates: "2022"
-    title: New-member competition
-    org: BYU Rocketry
-    detail: "Built a [rocket designed to reach a target altitude](/work/byu-rocketry/), placing third of around 40 teams."
+service:
+  - dates: "July 2022 – June 2024"
+    org: The Church of Jesus Christ of Latter-day Saints
+    title: Volunteer Representative
+    bullets:
+      - "Served a two-year, Spanish-speaking volunteer mission in southern Argentina, teaching and doing community service"
+      - "Led and trained groups of volunteers as district and zone leader"
+      - "Served as the primary financial and housing secretary for 6 months, managing all finances and housing contracts for ~150 volunteers"
+
+projects:
+  - title: Single-Wheel Robot (2025)
+    url: /work/wheel-robot/
+    bullets:
+      - "Designed, 3D-printed, wired, and programmed a modular robot from scratch that converts between two-wheel and single-wheel balanced modes"
+  - title: Laser Tag System (2026)
+    url: /work/laser-tag/
+    bullets:
+      - "Designed an optical transceiver board (LED transmitter, photodiode receiver, filtered amplifier) that placed in the top 10% of the class for signal-to-noise ratio"
+  - title: Real-Time Noise Floor Computer (2021)
+    url: /work/noise-floor-computer/
+    bullets:
+      - "Wrote code that estimated the noise floor of signals from the adaptive-optics wavefront sensor on the Daniel K. Inouye Solar Telescope in real time"
 
 skills:
-  - label: Photonics & optics
-    items: Lumerical FDTD, GDSFactory, free-space optics design, PIC testing, edge coupling
-  - label: Fabrication
-    items: "Cleanroom processing (fabricated a MOSFET, photodiodes and a diode laser), wirebonding, CNC machining"
-  - label: Simulation
-    items: "Open quantum systems, Monte Carlo noise models, continuous-variable quantum optics, QKD key-rate analysis"
-  - label: Embedded & hardware
-    items: FPGA (Xilinx Vivado), Rust, RP2040 / Cortex-M, Linux kernel drivers, KiCad PCB design
-  - label: Software
-    items: Python, C, Java, JavaScript, TensorFlow, Git
+  - label: Cleanroom Experience
+    items: "Fabricated MOSFETs, photodiodes, and a diode laser in [BYU’s cleanroom](/work/cleanroom-fabrication/)"
+  - label: Optics, Photonics, and PIC Design
+    items: Lumerical FDTD, GDSFactory, Free Space Optics Design, PIC Testing, Edge Coupling, Wirebonding
+  - label: Programming and Hardware
+    items: Python, C, Rust, FPGA (Xilinx Vivado), KiCAD PCB Design, Linux Kernel Drivers
+  - label: Engineering Teams
+    items: "Hobby Robotics, [BYU Mars Rover Team](/work/byu-mars-rover/), [BYU Rocket Club](/work/byu-rocketry/)"
+  - label: Languages
+    items: English (native), Spanish (fluent)

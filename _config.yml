@@ -13,14 +13,14 @@ author:
   email: tylerrstowell@gmail.com
   github: tystowell
   scholar: ""        # Google Scholar profile URL (leave empty to hide)
-  linkedin: ""       # LinkedIn profile URL (leave empty to hide)
+  linkedin: "https://www.linkedin.com/in/tyler-stowell-910a81343/"
   orcid: ""          # ORCID URL (leave empty to hide)
   cv: /assets/files/CV.pdf   # leave empty ("") to hide the CV button
 
 # Full-height photo on the home page. Delete this block to show only the animated Bloch sphere instead.
-# `bloch: true` floats the animated Bloch sphere over the photo's fade.
+# `bloch: true` floats the animated Bloch sphere over the photo's fade (off; it now lives on the 404 page).
 hero_photo:
-  bloch: true
+  bloch: false
   src: /assets/img/tyler-portrait.jpg
   alt: Tyler aligning a fiber to the integrated homodyne QRNG under a microscope
   caption: Aligning the integrated homodyne QRNG

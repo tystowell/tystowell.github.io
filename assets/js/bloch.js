@@ -39,8 +39,22 @@
     var phi = t * 0.9;
     return [Math.sin(theta) * Math.cos(phi), Math.sin(theta) * Math.sin(phi), Math.cos(theta)];
   }
-  function draw(t) {
-    var v = state(t), s = project(v[0], v[1], v[2]), base = project(v[0], v[1], 0);
+  /* Decoherence: the transverse (coherent) part decays with T2, the longitudinal part with T1,
+     so the state spirals in from the surface toward the maximally mixed state at the center.
+     Every CYCLE seconds a fresh pure state is re-prepared. */
+  var T2 = 3.2, T1 = 5.5, CYCLE = 13, lastCycle = -1;
+  var readout = document.querySelector('[data-bloch-r]');
+  function draw(t, decohere) {
+    var v = state(t), r = 1;
+    if (decohere) {
+      var cyc = Math.floor(t / CYCLE), tc = t - cyc * CYCLE;
+      if (cyc !== lastCycle) { history = []; lastCycle = cyc; }   // re-prepared: start a new trail
+      var fT = Math.exp(-tc / T2), fL = Math.exp(-tc / T1);
+      v = [v[0] * fT, v[1] * fT, v[2] * fL];
+      r = Math.sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]);
+    }
+    if (readout) readout.textContent = r.toFixed(2);
+    var s = project(v[0], v[1], v[2]), base = project(v[0], v[1], 0);
     vec.setAttribute('x2', s[0]); vec.setAttribute('y2', s[1]);
     tip.setAttribute('cx', s[0]); tip.setAttribute('cy', s[1]);
     drop.setAttribute('x1', s[0]); drop.setAttribute('y1', s[1]);
@@ -51,12 +65,12 @@
   }
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    for (var i = 0; i < TRAIL; i++) draw(2 + i * 0.05);
+    for (var i = 0; i < TRAIL; i++) draw(2 + i * 0.05, false);
     return;
   }
   var start = performance.now();
   (function frame(now) {
-    draw((now - start) / 1000);
+    draw((now - start) / 1000, true);
     requestAnimationFrame(frame);
   })(start);
 })();

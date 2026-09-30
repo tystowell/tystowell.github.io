@@ -1,29 +1,24 @@
-# Papers, conference articles and talks shown on the About page, newest first.
-# type: paper | conference | preprint | poster | talk
-- title: "TODO: Paper on the graphical simulator for cavity-coupled color centers"
-  authors: "T. Stowell, et al."
-  venue: "In preparation"
-  year: 2026
-  type: preprint
-  url: ""
+# Publications on the About page, copied from assets/files/CV.pdf (same order).
+# authors/year are kept for reference but not shown, to match the CV.
+- title: "Integrated Differential Conjugate Homodyne Detection for Quantum Random Number Generation"
+  venue: "arXiv Preprint (Under review)"
+  url: "https://arxiv.org/abs/2412.02077"
+  authors: "C. Carver, J. Marchant, B. Fisher, N. Townsend, T. Stowell, A. Barlow, B. Arnesen, S.-H. W. Chiang, R. M. Camacho"
+  year: 2024
+  bullets:
+    - "Wrote [FPGA code](/work/qrng-fpga/) for Toeplitz hash-based entropy extraction from quantum shot-noise limited measurements at a rate of 12 Mbps"
 
 - title: "Quantum Conference Key Agreement Using a Photonic Integrated Circuit Green Machine"
-  authors: "TODO: author list"
-  venue: "Optica Quantum 2.0"
-  year: 2025   # TODO: confirm
-  type: conference
+  venue: "Conference Article (Optica Quantum 2.0)"
   url: ""
-
-- title: "Integrated Differential Conjugate Homodyne Detection for Quantum Random Number Generation"
-  authors: "C. Carver, J. Marchant, B. Fisher, N. Townsend, T. Stowell, A. Barlow, B. Arnesen, S.-H. W. Chiang, R. M. Camacho"
-  venue: "arXiv:2412.02077"
-  year: 2024
-  type: preprint
-  url: "https://arxiv.org/abs/2412.02077"
+  bullets:
+    - "Characterized a [PIC](/work/green-machine-passive/) capable of super additive measurements of quantum signals"
+    - "Built a digital twin and QKD simulations (decoy states, finite-key effects) to compute conference key rates"
 
 - title: "Device-Aware Quantum Photonic Simulator for Gaussian States"
-  authors: "C. Carver, A. Probst, B. Arnesen, B. Fisher, T. Stowell, R. M. Camacho"
-  venue: "Frontiers in Optics + Laser Science 2022, JTu4A.32"
-  year: 2022
-  type: paper
+  venue: "Conference Paper (Frontiers in Optics + Laser Science 2022)"
   url: "https://opg.optica.org/abstract.cfm?uri=fio-2022-JTu4A.32"
+  authors: "C. Carver, A. Probst, B. Arnesen, B. Fisher, T. Stowell, R. M. Camacho"
+  year: 2022
+  bullets:
+    - "Contributed quantum simulation features to the [Simphony](/work/simphony/) photonic circuit simulator, later extending it to sums of Gaussian states (e.g. cat states)"

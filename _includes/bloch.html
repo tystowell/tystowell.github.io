@@ -1,7 +1,7 @@
 {%- comment -%} Animated Bloch sphere for the hero. Drawn by assets/js/bloch.js. {%- endcomment -%}
-<figure class="bloch" aria-label="Animated Bloch sphere: a qubit state precessing">
+<figure class="bloch" aria-label="Animated Bloch sphere: a qubit state precessing and decohering toward the center">
   <svg width="360" height="360" viewBox="-1.45 -1.45 2.9 2.9" role="img">
-    <title>A qubit state precessing on the Bloch sphere</title>
+    <title>A qubit state precessing and decohering on the Bloch sphere</title>
     <circle class="b-sphere" cx="0" cy="0" r="1"/>
     <path class="b-ring b-back" data-ring="equator-back"/>
     <path class="b-ring" data-ring="equator-front"/>
@@ -16,5 +16,5 @@
     <circle class="b-tip" cx="0" cy="-1" r="0.045"/>
     <circle class="b-origin" cx="0" cy="0" r="0.025"/>
   </svg>
-  <figcaption class="mono">|ψ⟩ = cos(θ/2)|0⟩ + e<sup>iφ</sup> sin(θ/2)|1⟩</figcaption>
+  <figcaption class="mono">ρ = ½(I + <b>r</b>·σ) &nbsp;·&nbsp; |<b>r</b>| = <span data-bloch-r>1.00</span></figcaption>
 </figure>

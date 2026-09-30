@@ -10,37 +10,21 @@ layout: default
     <div class="cv-actions">
       {% if site.author.cv != "" %}<a class="btn btn-primary" href="{{ site.author.cv | relative_url }}" download>{% include icon.html name="file" %} Download CV</a>{% endif %}
       {% if site.author.email != "" %}<a class="btn" href="mailto:{{ site.author.email }}">{% include icon.html name="mail" %} {{ site.author.email }}</a>{% endif %}
+      {% if site.author.linkedin != "" %}<a class="btn" href="{{ site.author.linkedin }}">{% include icon.html name="linkedin" %} LinkedIn</a>{% endif %}
       {% if site.author.github != "" %}<a class="btn" href="https://github.com/{{ site.author.github }}">{% include icon.html name="github" %} GitHub</a>{% endif %}
       {% if site.author.scholar != "" %}<a class="btn" href="{{ site.author.scholar }}">{% include icon.html name="scholar" %} Scholar</a>{% endif %}
     </div>
   </header>
 
   <div class="cv-main">
-  <section class="cv-section">
-    <h2 class="cv-heading mono">Research interests</h2>
-    <div class="cv-prose">{{ content }}</div>
-  </section>
+  {%- assign intro = content | strip_html | strip -%}
+  {% if intro != "" %}<section class="cv-section"><div class="cv-prose">{{ content }}</div></section>{% endif %}
 
   {% if cv.education %}<section class="cv-section"><h2 class="cv-heading mono">Education</h2>{% include resume-entries.html entries=cv.education %}</section>{% endif %}
-  {% if cv.experience %}<section class="cv-section"><h2 class="cv-heading mono">Research & work experience</h2>{% include resume-entries.html entries=cv.experience %}</section>{% endif %}
-
-  {% if site.data.publications.size > 0 %}
-  <section class="cv-section">
-    <h2 class="cv-heading mono">Publications & presentations</h2>
-    {% for pub in site.data.publications %}
-    <div class="cv-row">
-      <p class="cv-dates mono">{{ pub.year }}</p>
-      <div class="cv-body">
-        <h3 class="cv-title">{% if pub.url != "" %}<a href="{{ pub.url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
-        <p class="cv-meta">{{ pub.authors | replace: "T. Stowell", "<strong>T. Stowell</strong>" }}</p>
-        <p class="cv-meta"><em>{{ pub.venue }}</em> <span class="cv-tag mono">{{ pub.type }}</span></p>
-      </div>
-    </div>
-    {% endfor %}
-  </section>
-  {% endif %}
-
-  {% if cv.teams %}<section class="cv-section"><h2 class="cv-heading mono">Student teams</h2>{% include resume-entries.html entries=cv.teams %}</section>{% endif %}
+  {% if cv.experience %}<section class="cv-section"><h2 class="cv-heading mono">Experience</h2>{% include resume-entries.html entries=cv.experience %}</section>{% endif %}
+  {% if cv.service %}<section class="cv-section"><h2 class="cv-heading mono">Service &amp; Leadership</h2>{% include resume-entries.html entries=cv.service %}</section>{% endif %}
+  {% if site.data.publications.size > 0 %}<section class="cv-section"><h2 class="cv-heading mono">Publications</h2>{% include resume-entries.html entries=site.data.publications %}</section>{% endif %}
+  {% if cv.projects %}<section class="cv-section"><h2 class="cv-heading mono">Selected Projects</h2>{% include resume-entries.html entries=cv.projects %}</section>{% endif %}
 
   {% if cv.skills %}
   <section class="cv-section">
@@ -48,7 +32,7 @@ layout: default
     {% for s in cv.skills %}
     <div class="cv-row cv-row-tight">
       <p class="cv-dates mono">{{ s.label }}</p>
-      <div class="cv-body"><p class="cv-skill">{{ s.items }}</p></div>
+      <div class="cv-body"><p class="cv-skill">{{ s.items | replace: "](/", "](__BASE__/" | replace: "__BASE__", site.baseurl | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p></div>
     </div>
     {% endfor %}
   </section>

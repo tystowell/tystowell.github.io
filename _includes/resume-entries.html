@@ -1,10 +1,19 @@
+{%- comment -%} Rows for the About page. Each entry: dates, org, title, bullets (Markdown links OK). {%- endcomment -%}
 {%- for e in include.entries -%}
 <div class="cv-row">
   <p class="cv-dates mono">{{ e.dates }}</p>
   <div class="cv-body">
-    <h3 class="cv-title">{{ e.title }}{% if e.org %}<span class="cv-org"> · {{ e.org }}</span>{% endif %}</h3>
-    {% if e.location %}<p class="cv-meta">{{ e.location }}</p>{% endif %}
-    {% if e.detail %}<div class="cv-detail">{{ e.detail | replace: "](/", "](__BASE__/" | replace: "__BASE__", site.baseurl | markdownify }}</div>{% endif %}
+    <h3 class="cv-title">
+      {%- if e.url and e.url != "" %}<a href="{{ e.url | relative_url }}">{% endif -%}
+      {%- if e.org %}{{ e.org }}{% if e.title %}<span class="cv-org"> – {{ e.title }}</span>{% endif %}{% else %}{{ e.title }}{% endif -%}
+      {%- if e.url and e.url != "" %}</a>{% endif -%}
+    </h3>
+    {% if e.venue %}<p class="cv-meta">{{ e.venue }}</p>{% endif %}
+    {% if e.bullets %}
+    <ul class="cv-bullets">
+      {% for b in e.bullets %}<li>{{ b | replace: "](/", "](__BASE__/" | replace: "__BASE__", site.baseurl | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li>{% endfor %}
+    </ul>
+    {% endif %}
   </div>
 </div>
 {%- endfor -%}

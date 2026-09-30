@@ -7,6 +7,8 @@
     {% include social-links.html %}
   </div>
   <div class="container footer-meta mono">
-    © {{ site.time | date: "%Y" }} · Built with Jekyll &amp; GitHub Pages
+    <span>© {{ site.time | date: "%Y" }} · Built with Jekyll &amp; GitHub Pages</span>
+    {%- comment -%} Easter egg: /decohere/ doesn't exist, so this opens the 404 page. {%- endcomment %}
+    <a class="decohere-btn" href="{{ '/decohere/' | relative_url }}" title="Measure the page and see what happens">decohere</a>
   </div>
 </footer>
