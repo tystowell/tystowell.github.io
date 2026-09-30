@@ -10,10 +10,9 @@ body_class: home
       <div class="hero-intro">{{ site.intro | markdownify }}</div>
       <div class="hero-actions">
         <a class="btn btn-primary" href="{{ '/work/' | relative_url }}">See my work {% include icon.html name="arrow-right" %}</a>
-        {% if site.author.cv != "" %}<a class="btn" href="{{ site.author.cv | relative_url }}">{% include icon.html name="file" %} CV</a>{% endif %}
         <a class="btn" href="{{ '/about/' | relative_url }}">About me</a>
       </div>
-      {% include social-links.html %}
+      {% include social-links.html cv=true %}
     </div>
 {%- endcapture -%}
 

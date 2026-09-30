@@ -18,7 +18,7 @@ layout: default
 
   <div class="cv-main">
   {%- assign intro = content | strip_html | strip -%}
-  {% if intro != "" %}<section class="cv-section"><div class="cv-prose">{{ content }}</div></section>{% endif %}
+  {% if intro != "" %}<section class="cv-section"><h2 class="cv-heading mono">Introduction</h2><div class="cv-prose">{{ content }}</div></section>{% endif %}
 
   {% if cv.education %}<section class="cv-section"><h2 class="cv-heading mono">Education</h2>{% include resume-entries.html entries=cv.education %}</section>{% endif %}
   {% if cv.experience %}<section class="cv-section"><h2 class="cv-heading mono">Experience</h2>{% include resume-entries.html entries=cv.experience %}</section>{% endif %}

@@ -81,16 +81,16 @@ body_class: project-page
     </div>
 
     <nav class="pager" aria-label="Newer and older projects">
-      {% if newer_p %}
-      <a class="pager-prev" href="{{ newer_p.url | relative_url }}">
-        <span class="mono">{% include icon.html name="arrow-left" %} Newer</span>
-        <strong>{{ newer_p.title }}</strong>
+      {% if older_p %}
+      <a class="pager-prev" href="{{ older_p.url | relative_url }}">
+        <span class="mono">{% include icon.html name="arrow-left" %} Older</span>
+        <strong>{{ older_p.title }}</strong>
       </a>
       {% else %}<span></span>{% endif %}
-      {% if older_p %}
-      <a class="pager-next" href="{{ older_p.url | relative_url }}">
-        <span class="mono">Older {% include icon.html name="arrow-right" %}</span>
-        <strong>{{ older_p.title }}</strong>
+      {% if newer_p %}
+      <a class="pager-next" href="{{ newer_p.url | relative_url }}">
+        <span class="mono">Newer {% include icon.html name="arrow-right" %}</span>
+        <strong>{{ newer_p.title }}</strong>
       </a>
       {% endif %}
     </nav>
