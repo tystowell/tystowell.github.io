@@ -55,7 +55,11 @@ body_class: project-page
 
     {% if page.hero %}
     <figure class="project-hero">
+      {% if page.hero_video %}
+      <video src="{{ page.hero_video | relative_url }}" poster="{{ page.hero | relative_url }}" autoplay muted loop playsinline controls preload="metadata" aria-label="{{ page.hero_alt | default: page.title }}"></video>
+      {% else %}
       <img src="{{ page.hero | relative_url }}" alt="{{ page.hero_alt | default: page.title }}">
+      {% endif %}
       {% if page.hero_caption %}<figcaption>{{ page.hero_caption }}</figcaption>{% endif %}
     </figure>
     {% endif %}

@@ -11,8 +11,8 @@ collaborators: UMD, UMass, MIT, Qunnect
 tools: [Python, Open quantum systems, Monte Carlo, GUI]
 thumbnail: /assets/img/projects/color-center-simulator/architecture.png
 hero: /assets/img/projects/color-center-simulator/architecture.png
-hero_alt: Architecture of the simulator, from defect and cavity physics through time-domain simulation to a full entanglement protocol
-hero_caption: "How the simulator fits together: a device model of the defect and cavity (top left), a time-domain master-equation simulation of photon reflection and microwave control (top right), and full protocols built from gates, here producing heralded nuclear spin–spin entanglement with F = 0.82 (bottom)."
+hero_alt: Architecture of the simulator, from defect and cavity physics through time-domain simulation to a three-node entanglement protocol
+hero_caption: "How the simulator fits together: a device model of the defect and cavity (top left), a time-domain master-equation simulation of photon reflection and microwave control (top right), and full protocols built from gates with an independent noise bath on each emitter, here heralding entanglement between the electron spins of nodes A and C with F(Φ⁻) = 0.98 (bottom)."
 links:
   - label: Code
     url: https://github.com/tystowell

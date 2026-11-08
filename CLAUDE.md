@@ -71,7 +71,7 @@ click opens it full size.
 
 ## Structure
 
-- Categories and their groups (Research / Work Experience / Student Teams / Coursework /
+- Categories and their groups (Research / Work Experience / Student Teams / Competitions / Coursework /
   Personal Projects) live in `_data/categories.yml`.
 - `date:` is the **start** date and drives every sort, newest first. `period:` is the text
   that gets displayed.

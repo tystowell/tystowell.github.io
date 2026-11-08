@@ -5,7 +5,7 @@ category: photonics
 date: 2022-01-01
 period: Jan – Jul 2022
 status: Completed
-featured: true
+featured: false
 role: FPGA design & QRNG theory
 tools: [FPGA, Artix-7, Toeplitz hashing, Entropy estimation, C]
 thumbnail: /assets/img/projects/toeplitz/fpga-board.jpg

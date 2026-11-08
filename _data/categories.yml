@@ -28,6 +28,12 @@
   hue: "#5f8f3a"
   blurb: Competition engineering teams, from high school robotics to BYU.
 
+- id: competition
+  label: Hackathons
+  group: Competitions
+  hue: "#c8324b"
+  blurb: Time-limited challenges and hackathons.
+
 - id: coursework
   label: Course Projects
   group: Coursework

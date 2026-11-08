@@ -35,6 +35,7 @@ Useful front matter:
 |---|---|
 | `featured: true` | Show as a large card in Highlights on the home page |
 | `math: true` | Enables LaTeX via MathJax: `$inline$` and `$$display$$` |
+| `hero_video: <mp4>` | Plays a looping MP4 as the banner instead of the `hero:` image, which becomes its poster frame |
 | `embed: <url>` | Embeds an iframe at the top of the page. Good for games hosted on GitHub Pages |
 | `embed_size: [w, h]` | For fixed-size pages (like a game canvas): renders at that size and scales it to fit |
 | `links:` | Buttons under the title (`icon:` can be `github`, `file`, `play`, `external`) |
@@ -45,7 +46,7 @@ Useful front matter:
 | File | Controls |
 |---|---|
 | `_config.yml` | Name, tagline, intro text, contact links, CV path |
-| `_data/categories.yml` | Categories, their groups (Research / Personal Projects) and colors |
+| `_data/categories.yml` | Categories, their groups (Research / Work Experience / Student Teams / Competitions / Coursework / Personal Projects) and colors |
 | `_data/navigation.yml` | Top navigation links |
 | `_data/publications.yml` | Papers, posters and talks on the About page |
 | `about.md` | About page intro and research interests |
