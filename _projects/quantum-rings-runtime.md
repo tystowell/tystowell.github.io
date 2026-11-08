@@ -27,7 +27,7 @@ hero_caption: "The circuit probe running on a 50-qubit training circuit at bond 
 
 The first [Intermountain Quantum Competition](https://iqc.devpost.com/project-gallery) was a 24-hour hackathon at BYU on November 6–7, 2026. I took the Quantum Rings challenge and formed a team with three people I met at the event, Emma, Matthew and Amelia, and I led the team.
 
-The challenge was to take a quantum circuit (an OpenQASM file) and a simulator setting called the `threshold`, and predict how long Quantum Rings' simulator would take to run it, without running it. The training set had 532 circuits, each run at five thresholds from 16 to 1024. Runtimes ranged from 0.15 seconds to the 6-hour cap, and the prediction had to take under 15 seconds per circuit. Each prediction was scored on a log scale as 1 − |log₁₀(predicted / actual)|, so being off by 2× costs the same at one second as at one hour.
+The challenge was to take a quantum circuit (an OpenQASM file) and a simulator setting called the `threshold`, and predict how long Quantum Rings' simulator would take to run it, without running it. The training set had 532 circuits, each run at five thresholds from 16 to 1024. Runtimes ranged from 0.15 seconds to the 6-hour cap, and the prediction had to take under 15 seconds per circuit. Each prediction was scored on a log scale as 1 − &#124;log₁₀(predicted / actual)&#124;, so being off by 2× costs the same at one second as at one hour.
 
 We won first place. Our model scored **93.8% on the hidden hold-out circuits**, the top score in the challenge. For comparison, the organizers' own reference model scored 77.9% and predicting the median runtime scored 27.4%.
 
