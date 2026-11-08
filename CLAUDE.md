@@ -83,5 +83,6 @@ click opens it full size.
 
 macOS system Ruby (2.6) can't run `bundle install` for `github-pages`. Either install a newer
 Ruby (`brew install ruby`) or, to just check the build, push and check the repo's **Actions**
-tab. After a push, GitHub Pages takes about a minute to rebuild, and browsers can keep the old
-CSS for up to 10 minutes. Hard-refresh before assuming something broke.
+tab. After a push, GitHub Pages takes about a minute to rebuild. `main.css` and `main.js` are
+linked with a `?v=<build time>` query, so each build forces fresh copies, but the HTML itself
+can still be cached for up to 10 minutes. Hard-refresh before assuming something broke.
