@@ -1,6 +1,6 @@
 ---
 title: Predicting Quantum Simulation Runtime with MPS Probes
-summary: First place in the Quantum Rings challenge at the 2026 Intermountain Quantum Competition. I led a team of four that predicted how long a tensor-network simulator would take on a circuit by running a tiny, budgeted MPS simulation of it first. We scored 93.8% on the hidden hold-out set.
+summary: I won first place in the Quantum Rings challenge at the 2026 Intermountain Quantum Competition. I led a team of four that predicted how long a tensor-network simulator would take on a circuit by running a tiny, budgeted MPS simulation of it first. We scored 93.8% on their validation dataset.
 category: competition
 date: 2026-11-06
 period: November 2026
@@ -107,6 +107,6 @@ On the organizers' hidden hold-out set, the model scored **93.8%**.
 
 ## What's next
 
-There's honestly some room for improvement here. The results of a 24 hour hackathon in which we pushed to the end with some heavy AI usage are far from a finished product haha. However, I'm super proud of what we did accomplish, and I may look at this more to see if there's any way to get a paper or research project out of it. I'm really curious at looking at the extreme outliers - on one circuit, we predicted a runtime of 10s and it took over 6 hours on real hardware. What makes that special? How can we catch those circuits? How can we attach these algorithms to trick it into predicting the wrong runtime? All of those could be their own interesting direction for research like this.
+There's honestly some room for improvement here. The results of a 24 hour hackathon in which we pushed to the end with some heavy AI usage are far from a finished product haha. However, I'm super proud of what we did accomplish, and I may look at this more to see if there's any way to get a paper or research project out of it. I'm really curious at looking at the extreme outliers - on one circuit, we predicted a runtime of 10s and it took over 6 hours on real hardware. What makes that special? How can we catch those circuits? Can we attack these algorithms by tricking it into predicting the wrong runtime? All of those could be their own interesting direction for research.
 
 Thanks so much to QuantumRings for the awesome problem! This was seriously one of the coolest projects I've worked on in a bit, and I appreciate that it has real world consequences and applications. Hopefully there will be opportunities to work together again in the future!
