@@ -22,8 +22,8 @@ layout: default
 
   {% if cv.education %}<section class="cv-section"><h2 class="cv-heading mono">Education</h2>{% include resume-entries.html entries=cv.education %}</section>{% endif %}
   {% if cv.experience %}<section class="cv-section"><h2 class="cv-heading mono">Experience</h2>{% include resume-entries.html entries=cv.experience %}</section>{% endif %}
-  {% if cv.service %}<section class="cv-section"><h2 class="cv-heading mono">Service &amp; Leadership</h2>{% include resume-entries.html entries=cv.service %}</section>{% endif %}
   {% if site.data.publications.size > 0 %}<section class="cv-section"><h2 class="cv-heading mono">Publications</h2>{% include resume-entries.html entries=site.data.publications %}</section>{% endif %}
+  {% if cv.awards %}<section class="cv-section"><h2 class="cv-heading mono">Awards &amp; Honors</h2>{% include resume-entries.html entries=cv.awards %}</section>{% endif %}
   {% if cv.projects %}<section class="cv-section"><h2 class="cv-heading mono">Selected Projects</h2>{% include resume-entries.html entries=cv.projects %}</section>{% endif %}
 
   {% if cv.skills %}
@@ -40,5 +40,7 @@ layout: default
     {% endfor %}
   </section>
   {% endif %}
+
+  {% if cv.service %}<section class="cv-section"><h2 class="cv-heading mono">Service &amp; Leadership</h2>{% include resume-entries.html entries=cv.service %}</section>{% endif %}
   </div>
 </article>

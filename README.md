@@ -50,7 +50,7 @@ Useful front matter:
 | `_data/navigation.yml` | Top navigation links |
 | `_data/publications.yml` | Papers, posters and talks on the About page |
 | `about.md` | About page intro and research interests |
-| `_data/resume.yml` | About page résumé: education, experience, student teams, skills |
+| `_data/resume.yml` | About page résumé: education, experience, awards, projects, skills, service |
 | `assets/css/main.css` | All styling. Colors and fonts are CSS variables at the top |
 
 **CV:** drop your PDF at `assets/files/cv.pdf` and set `cv: /assets/files/cv.pdf` in `_config.yml`.

@@ -14,8 +14,8 @@
   authors: "B. Fisher, T. Stowell, J. G. Richardson, D. Saladukha, M. Hall, R. Bernson, I. Frank, S. Guha, P. O'Brien, R. M. Camacho"
   year: 2025
   bullets:
-    - "Characterized a [PIC](/work/green-machine-passive/) capable of super additive measurements of quantum signals"
-    - "Built a digital twin and QKD simulations (decoy states, finite-key effects) to compute conference key rates"
+    - "Characterized a [PIC](/work/green-machine-passive/) capable of superadditive measurements of quantum signals"
+    - "Built a digital twin and QKD simulations (decoy states, finite-key effects) to compute conference key rates exceeding GHZ based protocols"
 
 - title: "Device-Aware Quantum Photonic Simulator for Gaussian States"
   venue: "Conference Paper (Frontiers in Optics + Laser Science 2022)"
@@ -23,4 +23,4 @@
   authors: "C. Carver, A. Probst, B. Arnesen, B. Fisher, T. Stowell, R. M. Camacho"
   year: 2022
   bullets:
-    - "Contributed quantum simulation features to the [Simphony](/work/simphony/) photonic circuit simulator, later extending it to sums of Gaussian states (e.g. cat states)"
+    - "Contributed quantum simulation features to the [Simphony](/work/simphony/) photonic circuit simulator, eventually extending it to sums of Gaussian states (e.g. cat states)"
