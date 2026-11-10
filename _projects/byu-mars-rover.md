@@ -8,8 +8,9 @@ status: Ongoing
 role: Science module, optics lead
 collaborators: BYU Mars Rover team
 tools: [Optics, Fluorescence spectroscopy]
-# thumbnail: /assets/img/projects/mars-rover-thumb.jpg
-# hero: /assets/img/projects/mars-rover.jpg
+thumbnail: /assets/img/projects/byu-mars-rover/card.png
+# TODO: add a photo of the rover and use it as the hero (and probably the thumbnail).
+# hero: /assets/img/projects/byu-mars-rover/rover.jpg
 # hero_caption: "The rover in the field."
 ---
 
@@ -21,6 +22,11 @@ The mars rover team has been, so far, an excellent opportunity to work on a cros
 
 ## My role
 
-I've been working with geologists and biologists on both a pre-existing life detection system and a new one that we are adding to the rover. We inherited a fluoresence detector built by last year's team (none of whom are on the module this year, so my small subteam now has complete ownership), and we are both trying to improve this detection and implement some form of chemical analysis.
+<figure class="figure-float">
+  <img src="{{ '/assets/img/projects/byu-mars-rover/fluorescence-detector.png' | relative_url }}" alt="CAD model of the fluorescence detector: a dark gray 3D-printed housing with a blue component on top, a square optical port at the front, and the new LED module (a black heat sink, LED board and lens) attached on the left side">
+  <figcaption>CAD model of the fluorescence detector. On the left is the new LED module I'm working on integrating into the 3D-printed housing: a heat sink, an LED board and a lens.</figcaption>
+</figure>
 
-I've only been on the team for a few weeks so far, and we've spent a lot of time creating system requirements matrices and running tests on the rover we inherited from last year's team. I'll try to update this page in 8 months or so once I've finished my work on the rover and can state with more confidence what I've done, but I'm excited to work in this very different environment with a lot of very smart people with different backgrounds. I think we'll accomplish something great!
+I've been working with geologists and biologists on both a pre-existing life detection system and a new one that we are adding to the rover. We inherited a fluorescence detector built by last year's team (none of whom are on the module this year, so my small subteam now has complete ownership), and we are both trying to improve this detection and implement some form of chemical analysis. Right now I'm upgrading the detector with new high-power LEDs and lenses.
+
+I should have more updates and photos for this page when the year ends and we compete. Until then, this sneak peak will have to be enough haha
