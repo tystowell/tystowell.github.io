@@ -31,7 +31,10 @@ This event was my first hackathon, and I'm super glad I went. The first day, we 
 
 Out challenge was to take a quantum circuit (an OpenQASM file) with a specific threshold, and predict how long Quantum Rings' simulator would take to run it, without running it. The training set had 532 circuits, each run at five thresholds from 16 to 1024. Runtimes ranged from 0.15 seconds to the 6-hour cap, and some circuits had as many as 6 million gates. Our predictions had to be generated in under 15 seconds. Each prediction was scored on a log scale as 1 − &#124;log₁₀(predicted / actual)&#124;, so being off by 2× costs the same at one second as at one hour.
 
-It was a very long 24 hours, but it was well worth it. (My wife may or may not agree with that statement haha). Seeing everything come together last minute and being able to present our solution was immensely satisfying. Our model scored **93.8% on the hidden hold-out circuits**, the top score in the challenge. For comparison, the organizers' own reference model scored around 80%, depending on the dataset used for validation.
+It was a very long 24 hours, but it was well worth it. (My wife may or may not agree with that statement haha). Seeing everything come together last minute and being able to present our solution was immensely satisfying. Our model scored **93.8% on the hidden hold-out circuits**, the top score in the challenge. For comparison, the organizers' own reference model scored 82%.
+
+![Four team members in navy IQC t-shirts holding a Quantum Rings sign under an arch of blue and white balloons, with a "First Place" slide on the screen behind them]({{ '/assets/img/projects/quantum-rings-runtime/award.jpg' | relative_url }})
+*Our team at the awards ceremony after taking first place in the Quantum Rings challenge.*
 
 ## Why was this so difficult?
 
